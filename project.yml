@@ -1,0 +1,68 @@
+---
+settings:
+  name: NetApp Cloud Tiering
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetApp Cloud Tiering-Dokumente
+    url: "/index.html"
+  - title: Versionshinweise
+    url: "/whats-new.html"
+  - title: Erste Schritte
+    entries:
+    - title: Erfahren Sie mehr über NetApp Cloud Tiering
+      url: "/concept-cloud-tiering.html"
+    - title: Tiering von lokalen Daten in die Cloud
+      entries:
+      - title: Tier zu Amazon S3
+        url: "/task-tiering-onprem-aws.html"
+      - title: Ebene auf Azure Blob Storage
+        url: "/task-tiering-onprem-azure.html"
+      - title: Tier zu Google Cloud Storage
+        url: "/task-tiering-onprem-gcp.html"
+      - title: Tier zu StorageGRID
+        url: "/task-tiering-onprem-storagegrid.html"
+      - title: Tier-to-S3-Objektspeicher
+        url: "/task-tiering-onprem-s3-compat.html"
+    - title: Einrichten der Lizenzierung
+      url: "/task-licensing-cloud-tiering.html"
+    - title: FAQ
+      url: "/faq-cloud-tiering.html"
+  - title: Verwenden Sie NetApp Cloud Tiering
+    entries:
+    - title: Verwalten des Daten-Tierings
+      url: "/task-managing-tiering.html"
+    - title: Objektspeicher verwalten
+      url: "/task-managing-object-storage.html"
+    - title: Testen der Cloud-Leistung
+      url: "/task-tiering-test.html"
+    - title: Tiering-Übersicht für alle Cluster anzeigen
+      url: "/task-tiering-onprem-overview.html"
+    - title: Überwachen des Status von Tiering-Warnungen
+      url: "/task-monitor-tiering-alerts.html"
+  - title: Referenz
+    entries:
+    - title: Unterstützte Amazon S3-Speicherklassen und -Regionen
+      url: "/reference-aws-support.html"
+    - title: Unterstützte Azure-Zugriffsebenen und -Regionen
+      url: "/reference-azure-support.html"
+    - title: Unterstützte Google Cloud-Speicherklassen und -Regionen
+      url: "/reference-google-support.html"
+  - title: Wissen und Unterstützung
+    entries:
+    - title: Für Support registrieren
+      url: "/task-support-registration.html"
+    - title: Hilfe erhalten
+      url: "/task-get-help.html"
+  - title: Rechtliche Hinweise
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

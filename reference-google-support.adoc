@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-google-support.html 
+keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive, cloud tiering, cloud tier, bluexp 
+summary: NetApp Cloud Tiering unterstützt mehrere Google Cloud-Speicherklassen und die meisten Regionen. 
+---
+= Unterstützte Google Cloud-Speicherklassen und -Regionen für NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering unterstützt mehrere Google Cloud-Speicherklassen und die meisten Regionen.
+
+
+
+== Unterstützte GCP-Speicherklassen
+
+Wenn Sie das Daten-Tiering von Ihren lokalen ONTAP Systemen zu GCP einrichten, verwendet Cloud Tiering automatisch die Speicherklasse _Standard_ für Ihre inaktiven Daten.  Cloud Tiering kann eine Lebenszyklusregel anwenden, sodass die Daten nach einer bestimmten Anzahl von Tagen von der Speicherklasse _Standard_ in andere Speicherklassen übergehen.  Sie können aus folgenden Speicherklassen wählen:
+
+* Nearline
+* Coldline
+* Archiv
+
+
+Wenn Sie keine andere Speicherklasse auswählen, verbleiben die Daten in der Speicherklasse _Standard_ und es werden keine Regeln angewendet.
+
+Wenn Sie eine Cloud Tiering-Lebenszyklusregel konfigurieren, dürfen Sie beim Einrichten des Buckets in Ihrem Google-Konto keine Lebenszyklusregeln konfigurieren.
+
+https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google Cloud Storage-Klassen"^] .
+
+
+
+== Unterstützte Google Cloud-Regionen
+
+Cloud Tiering unterstützt die folgenden Regionen.
+
+
+
+=== Amerika
+
+* Iowa
+* Los Angeles
+* Montreal
+* Nord-Virginia
+* Oregon
+* Sao Paulo
+* South Carolina
+
+
+
+
+=== Asien-Pazifik
+
+* Hongkong
+* Mumbai
+* Osaka
+* Singapur
+* Sydney
+* Taiwan
+* Tokio
+
+
+
+
+=== Europa
+
+* Belgien
+* Finnland
+* Frankfurt
+* London
+* Niederlande
+* Zürich
+

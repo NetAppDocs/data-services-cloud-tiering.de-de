@@ -1,0 +1,288 @@
+---
+sidebar: sidebar 
+permalink: task-managing-tiering.html 
+keywords: discover, volumes, report, hot, cold, inactive, active, capacity, used capacity, savings, health, failed, console 
+summary: Nachdem Sie nun das Daten-Tiering von Ihren lokalen ONTAP Clustern eingerichtet haben, können Sie Daten von zusätzlichen Volumes tieren, die Tiering-Richtlinie eines Volumes ändern, zusätzliche Cluster ermitteln und vieles mehr. 
+---
+= Verwalten Sie das Daten-Tiering für Ihre Cluster in NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nachdem Sie nun das Daten-Tiering von Ihren lokalen ONTAP Clustern eingerichtet haben, können Sie mithilfe von NetApp Cloud Tiering Daten von zusätzlichen Volumes tieren, die Tiering-Richtlinie eines Volumes ändern, zusätzliche Cluster ermitteln und vieles mehr.
+
+
+
+== Überprüfen der Tiering-Informationen für einen Cluster
+
+Überprüfen Sie die Daten in der Cloud-Ebene, auf Festplatten oder die Menge an Hot- und Cold-Data auf den Festplatten des Clusters.  Oder Sie möchten möglicherweise die Menge der heißen und kalten Daten auf den Festplatten des Clusters sehen.  Cloud Tiering stellt diese Informationen für jeden Cluster bereit.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
+. Wählen Sie auf der Seite *Cluster* das Menüsymbolimage:icon-action.png["Symbol „Aktionen“"] für einen Cluster und wählen Sie *Clusterinfo*.
++
+image:screenshot_tiering_cluster_info_button.png["Ein Screenshot der Auswahl der Schaltfläche „Cluster-Info“ auf der Seite „Cluster“."]
+
+. Überprüfen Sie die Details zum Cluster.
++
+Hier ist ein Beispiel:
+
++
+image:screenshot_tiering_cluster_info.png["Ein Screenshot, der die insgesamt vom Cluster genutzte Datenkapazität, die genutzte Kapazität des Clusters und Clusterinformationen zeigt."]
+
+
+
+Beachten Sie, dass die Anzeige bei Cloud Volumes ONTAP -Systemen anders ist.  Obwohl bei Cloud Volumes ONTAP Volumes Daten in die Cloud verschoben werden können, verwenden sie nicht den Cloud Tiering-Dienst. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Erfahren Sie, wie Sie inaktive Daten von Cloud Volumes ONTAP -Systemen in kostengünstigen Objektspeicher verschieben."^] .
+
+Sie können auch https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering["Anzeigen von Tiering-Informationen für einen Cluster von Active IQ Digital Advisor (auch bekannt als Digital Advisor)"^] wenn Sie mit diesem NetApp -Produkt vertraut sind.  Wählen Sie im linken Navigationsbereich *Cloud-Empfehlungen* aus.
+
+image:screenshot_tiering_aiq_fabricpool_info.png["Ein Screenshot, der FabricPool Informationen für einen Cluster mithilfe des FabricPool Advisor von Digital Advisor zeigt."]
+
+
+
+== Tierdaten aus zusätzlichen Volumes
+
+Richten Sie jederzeit Daten-Tiering für zusätzliche Volumes ein – beispielsweise nach der Erstellung eines neuen Volumes.
+
+
+TIP: Sie müssen den Objektspeicher nicht konfigurieren, da er bereits bei der ersten Einrichtung des Tierings für den Cluster konfiguriert wurde.  ONTAP verschiebt inaktive Daten von allen zusätzlichen Volumes in denselben Objektspeicher.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
+. Wählen Sie auf der Seite *Cluster* *Tier-Volumes* für den Cluster aus.
++
+image:screenshot_tiering_tier_volumes_button.png["Ein Screenshot, der zeigt, wie Sie die Schaltfläche „Tier Volumes“ für einen Cluster auswählen."]
+
+. Wählen Sie auf der Seite „Tier Volumes“ die Volumes aus, für die Sie Tiering konfigurieren möchten, und starten Sie die Seite „Tiering Policy“:
++
+** Um alle Bände auszuwählen, aktivieren Sie das Kontrollkästchen in der Titelzeile (image:button_backup_all_volumes.png[""] ) und wählen Sie *Volumes konfigurieren*.
+** Um mehrere Volumes auszuwählen, aktivieren Sie das Kontrollkästchen für jedes Volume (image:button_backup_1_volume.png[""] ) und wählen Sie *Volumes konfigurieren*.
+** Um ein einzelnes Volume auszuwählen, wählen Sie die Zeile (oderimage:screenshot_edit_icon.gif["Bleistiftsymbol bearbeiten"] Symbol) für die Lautstärke.
++
+image:screenshot_tiering_tier_volumes.png["Ein Screenshot, der zeigt, wie Sie ein einzelnes Volume, mehrere Volumes oder alle Volumes auswählen und die Schaltfläche „Ausgewählte Volumes ändern“ verwenden."]
+
+
+
+. Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
+. Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
++
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+
++
+image:screenshot_tiering_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
+
+
+
+.Ergebnis
+ONTAP beginnt mit der Tiering-Verteilung der Daten der ausgewählten Volumes in die Cloud.
+
+
+
+== Ändern der Tiering-Richtlinie eines Volumes
+
+Durch das Ändern der Tiering-Richtlinie für ein Volume wird die Art und Weise geändert, wie ONTAP kalte Daten in den Objektspeicher einordnet.  Die Änderung beginnt ab dem Zeitpunkt, an dem Sie die Richtlinie ändern.  Es ändert nur das nachfolgende Tiering-Verhalten für das Volume – es verschiebt die Daten nicht rückwirkend in die Cloud-Ebene.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Mobilität > CloudTiering* aus.
+. Wählen Sie auf der Seite *Cluster* *Tier-Volumes* für den Cluster aus.
+. Wählen Sie auf der Seite *Cluster* *Tier-Volumes* für den Cluster aus.
+. Klicken Sie auf die Zeile für ein Volumen, wählen Sie eine Tiering-Richtlinie aus, passen Sie optional die Kühltage an und wählen Sie *Übernehmen*.
+. Klicken Sie auf die Zeile für ein Volumen, wählen Sie eine Tiering-Richtlinie aus, passen Sie optional die Kühltage an und wählen Sie *Übernehmen*.
++
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+
++
+image:screenshot_tiering_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
+
+
+
+
+NOTE: Wenn Sie Optionen zum Abrufen von mehrstufigen Daten sehen, lesen Sie<<Migrieren Sie Daten von der Cloud-Ebene zurück zur Leistungsebene,Migrieren Sie Daten von der Cloud-Ebene zurück zur Leistungsebene>> für Details.
+
+.Ergebnis
+ONTAP ändert die Tiering-Richtlinie und beginnt mit dem Tiering der Daten basierend auf der neuen Richtlinie.
+
+
+
+== Ändern Sie die zum Hochladen inaktiver Daten in den Objektspeicher verfügbare Netzwerkbandbreite
+
+Wenn Sie Cloud Tiering für einen Cluster aktivieren, kann ONTAP standardmäßig eine unbegrenzte Bandbreite verwenden, um die inaktiven Daten von Volumes im System in den Objektspeicher zu übertragen.  Wenn sich die Datenverkehrsstaffelung auf die Arbeitslast der Benutzer auswirkt, drosseln Sie die während der Übertragung verwendete Netzwerkbandbreite.  Als maximale Übertragungsrate können Sie einen Wert zwischen 1 und 10.000 Mbit/s wählen.
+
+. Wählen Sie im linken Navigationsmenü *Mobilität > Tiering* aus.
+. Wählen Sie auf der Seite *Cluster* das Menüsymbolimage:icon-action.png["Symbol „Aktionen“"] für einen Cluster und wählen Sie *Maximale Übertragungsrate*.
+. Wählen Sie auf der Seite *Cluster* das Menüsymbolimage:icon-action.png["Symbol „Aktionen“"] für einen Cluster und wählen Sie *Maximale Übertragungsrate*.
++
+image:screenshot_tiering_transfer_rate_button.png["Ein Screenshot der Auswahl der Schaltfläche „Maximale Übertragungsrate“ auf der Seite „Cluster“."]
+
+. Wählen Sie auf der Seite „Maximale Übertragungsrate“ das Optionsfeld „Begrenzt“ und geben Sie die maximal nutzbare Bandbreite ein, oder wählen Sie „Unbegrenzt“ aus, um anzugeben, dass keine Begrenzung besteht.  Wählen Sie dann *Übernehmen*.
+. Wählen Sie auf der Seite „Maximale Übertragungsrate“ das Optionsfeld „Begrenzt“ und geben Sie die maximal nutzbare Bandbreite ein, oder wählen Sie „Unbegrenzt“ aus, um anzugeben, dass keine Begrenzung besteht.  Wählen Sie dann *Übernehmen*.
++
+image:screenshot_tiering_transfer_rate.png["Ein Screenshot des Dialogfelds „Maximale Übertragungsrate“ für einen Cluster."]
+
+
+
+Diese Einstellung hat keinen Einfluss auf die Bandbreite, die anderen Clustern zugewiesen wird, die Daten tieren.
+
+
+
+== Laden Sie einen Tiering-Bericht für Ihre Volumes herunter
+
+Laden Sie einen Bericht der Seite „Tier Volumes“ herunter, damit Sie den Tiering-Status aller Volumes auf den von Ihnen verwalteten Clustern überprüfen können.  Wählen Sie einfach dieimage:button_download.png["Download"] Taste.  Cloud Tiering generiert eine CSV-Datei, die Sie überprüfen und bei Bedarf an andere Gruppen senden können.  Die CSV-Datei enthält bis zu 10.000 Datenzeilen.
+
+image:screenshot_tiering_report_download.png["Ein Screenshot, der zeigt, wie Sie eine CSV-Datei generieren, die den Tiering-Status aller Ihrer Volumes auflistet."]
+
+
+
+== Migrieren Sie Daten von der Cloud-Ebene zurück zur Leistungsebene
+
+Auf gestufte Daten, auf die aus der Cloud zugegriffen wird, kann „erneut aufgewärmt“ und zurück in die Leistungsstufe verschoben werden.  Wenn Sie jedoch proaktiv Daten von der Cloud-Ebene auf die Leistungsebene hochstufen möchten, können Sie dies im Dialogfeld „Tiering-Richtlinie“ tun.  Diese Funktion ist bei Verwendung von ONTAP 9.8 und höher verfügbar.
+
+Sie können dies tun, wenn Sie die Verwendung von Tiering auf einem Volume beenden möchten oder wenn Sie sich entscheiden, alle Benutzerdaten auf der Leistungsebene zu belassen, Snapshot-Kopien jedoch auf der Cloudebene zu behalten.
+
+Es gibt zwei Möglichkeiten:
+
+[cols="22,45,35"]
+|===
+| Option | Beschreibung | Auswirkungen auf die Tiering-Richtlinie 
+
+
+| Alle Daten wiederherstellen | Ruft alle in der Cloud abgelegten Volumedaten und Snapshot-Kopien ab und befördert sie in die Leistungsstufe. | Die Tiering-Richtlinie wird in „Keine Richtlinie“ geändert. 
+
+
+| Aktives Dateisystem wiederherstellen | Ruft nur aktive, in der Cloud abgelegte Dateisystemdaten ab und befördert sie in die Leistungsebene (Snapshot-Kopien verbleiben in der Cloud). | Die Tiering-Richtlinie wird in „Cold Snapshots“ geändert. 
+|===
+
+NOTE: Ihr Cloud-Anbieter berechnet Ihnen möglicherweise Gebühren auf Grundlage der aus der Cloud übertragenen Datenmenge.
+
+.Schritte
+Stellen Sie sicher, dass die Leistungsebene über genügend Speicherplatz für die aus der Cloud zurückverschobenen Daten verfügt.
+
+. Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
+. Wählen Sie auf der Seite *Cluster* *Tier-Volumes* für den Cluster aus.
+. Wählen Sie auf der Seite *Cluster* *Tier-Volumes* für den Cluster aus.
+. Klicken Sie auf dasimage:screenshot_edit_icon.gif["Bearbeitungssymbol, das am Ende jeder Zeile in der Tabelle für Tiering-Volumes angezeigt wird"] Symbol für das Volume, wählen Sie die gewünschte Abrufoption und wählen Sie *Übernehmen*.
+. Klicken Sie auf dasimage:screenshot_edit_icon.gif["Bearbeitungssymbol, das am Ende jeder Zeile in der Tabelle für Tiering-Volumes angezeigt wird"] Symbol für das Volume, wählen Sie die gewünschte Abrufoption und wählen Sie *Übernehmen*.
++
+image:screenshot_tiering_policy_settings_with_retrieve.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
+
+
+
+.Ergebnis
+Die Tiering-Richtlinie wird geändert und die gestaffelten Daten werden zurück in die Leistungsstufe migriert.  Je nach Datenmenge in der Cloud kann der Übertragungsvorgang einige Zeit in Anspruch nehmen.
+
+
+
+== Verwalten von Tiering-Einstellungen für Aggregate
+
+Jedes Aggregat in Ihren lokalen ONTAP -Systemen verfügt über zwei Einstellungen, die Sie anpassen können: den Schwellenwert für die Tiering-Füllung und ob die Berichterstattung über inaktive Daten aktiviert ist.  Jedes Aggregat in Ihren lokalen ONTAP -Systemen verfügt über zwei Einstellungen, die Sie anpassen können: den Schwellenwert für die Tiering-Füllung und ob die Berichterstattung über inaktive Daten aktiviert ist.
+
+Schwellenwert für die Tiering-Füllung:: Wenn Sie den Schwellenwert auf einen niedrigeren Wert festlegen, verringert sich die Datenmenge, die auf der Leistungsebene gespeichert werden muss, bevor die Einstufung erfolgt.  Dies kann für große Aggregate nützlich sein, die nur wenige aktive Daten enthalten.
++
+--
+Wenn Sie den Schwellenwert auf einen höheren Wert einstellen, erhöht sich die Datenmenge, die auf der Leistungsebene gespeichert werden muss, bevor die Einstufung erfolgt.  Dies kann für Lösungen nützlich sein, die nur dann eine Stufenbildung ermöglichen, wenn die Aggregate ihre maximale Kapazität fast erreichen.
+
+--
+Meldung inaktiver Daten:: Bei der Meldung inaktiver Daten (IDR) wird eine 31-tägige Abkühlungsphase verwendet, um zu bestimmen, welche Daten als inaktiv gelten.  Die Menge der abgestuften kalten Daten hängt von den für die Volumes festgelegten Tiering-Richtlinien ab.  Diese Menge kann von der Menge der von IDR mithilfe einer 31-tägigen Abkühlungsperiode ermittelten Kältedaten abweichen.
++
+--
+
+TIP: Am besten lassen Sie IDR aktiviert, da es Ihnen hilft, Ihre inaktiven Daten und Einsparmöglichkeiten zu identifizieren.  IDR muss aktiviert bleiben, wenn die Datenschichtung auf einem Aggregat aktiviert ist.
+
+--
+
+
+.Schritte
+. Wählen Sie auf der Seite *Cluster* die Option *Erweiterte Einrichtung* für den ausgewählten Cluster aus.
+. Wählen Sie auf der Seite *Cluster* die Option *Erweiterte Einrichtung* für den ausgewählten Cluster aus.
++
+image:screenshot_tiering_advanced_setup_button.png["Ein Screenshot, der die Schaltfläche „Erweiterte Einrichtung“ für einen Cluster zeigt."]
+
+. Wählen Sie auf der Seite „Erweiterte Einrichtung“ das Menüsymbol für das Aggregat und wählen Sie „Aggregat ändern“ aus.
+. Wählen Sie auf der Seite „Erweiterte Einrichtung“ das Menüsymbol für das Aggregat und wählen Sie „Aggregat ändern“ aus.
++
+image:screenshot_tiering_modify_aggr.png["Ein Screenshot, der die Option „Aggregat ändern“ für ein Aggregat zeigt."]
+
+. Ändern Sie im angezeigten Dialogfeld den Füllschwellenwert und wählen Sie, ob die Meldung inaktiver Daten aktiviert oder deaktiviert werden soll.
++
+image:screenshot_tiering_modify_aggregate.png["Ein Screenshot, der einen Schieberegler zum Ändern des Schwellenwerts für die Tiering-Füllung und eine Schaltfläche zum Aktivieren oder Deaktivieren der Meldung inaktiver Daten zeigt."]
+
+. Klicken Sie auf *Übernehmen*.
+
+
+
+
+== Beheben Sie den Betriebszustand
+
+Wenn Fehler auftreten, zeigt Cloud Tiering auf dem Cluster-Dashboard den Betriebszustandsstatus „Fehlgeschlagen“ an.  Der Zustand spiegelt den Status des ONTAP -Systems und der NetApp Konsole wider.
+
+.Schritte
+. Identifizieren Sie alle Cluster, deren Betriebszustand „Fehlgeschlagen“ lautet.
+. Bewegen Sie den Mauszeiger über das Informationssymbol „i“, um den Fehlergrund anzuzeigen.
+. Beheben Sie das Problem:
++
+.. Stellen Sie sicher, dass der ONTAP Cluster betriebsbereit ist und über eine eingehende und ausgehende Verbindung zu Ihrem Objektspeicheranbieter verfügt.
+.. Stellen Sie sicher, dass die Konsole über ausgehende Verbindungen zum Cloud Tiering-Dienst, zum Objektspeicher und zu den erkannten ONTAP Clustern verfügt.
+
+
+
+
+
+
+== Entdecken Sie zusätzliche Cluster von Cloud Tiering
+
+Sie können Ihre unentdeckten lokalen ONTAP Cluster von der Seite „Tiering _Cluster_“ zur Konsole hinzufügen, damit Sie das Tiering für den Cluster aktivieren können.
+
+Beachten Sie, dass auf der Tiering-On-Prem-Dashboard-Seite auch Schaltflächen angezeigt werden, mit denen Sie zusätzliche Cluster entdecken können.
+
+.Schritte
+. Wählen Sie unter „Cloud Tiering“ die Registerkarte *Cluster* aus.
+. Um alle unentdeckten Cluster anzuzeigen, wählen Sie *Unentdeckte Cluster anzeigen*.
+. Um alle unentdeckten Cluster anzuzeigen, wählen Sie *Unentdeckte Cluster anzeigen*.
++
+image:screenshot_tiering_show_undiscovered_cluster.png["Ein Screenshot, der die Schaltfläche „Unentdeckte Cluster anzeigen“ im Tiering-Dashboard zeigt."]
+
++
+Wenn Ihre NSS-Anmeldeinformationen in der Konsole gespeichert sind, werden die Cluster in Ihrem Konto in der Liste angezeigt.
+
++
+Wenn Ihre NSS-Anmeldeinformationen nicht gespeichert sind, werden Sie zunächst aufgefordert, Ihre Anmeldeinformationen hinzuzufügen, bevor Sie die nicht erkannten Cluster sehen können.
+
++
+image:screenshot_tiering_discover_cluster.png["Ein Screenshot, der zeigt, wie Sie einen vorhandenen Cluster ermitteln, um ihn der Konsole und dem Tiering-Dashboard hinzuzufügen."]
+
+. Klicken Sie auf *Cluster ermitteln* für den Cluster, den Sie über die Konsole verwalten und Daten-Tiering implementieren möchten.
+. Geben Sie auf der Seite „Clusterdetails“ das Kennwort für das Administratorbenutzerkonto ein und wählen Sie „Erkennen“ aus.
+. Geben Sie auf der Seite „Clusterdetails“ das Kennwort für das Administratorbenutzerkonto ein und wählen Sie „Erkennen“ aus.
++
+Beachten Sie, dass die IP-Adresse für die Clusterverwaltung auf Grundlage der Informationen aus Ihrem NSS-Konto ausgefüllt wird.
+
+. Auf der Seite „Details und Anmeldeinformationen“ wird der Clustername als Systemname hinzugefügt. Wählen Sie daher „Los“ aus.
+
+
+.Ergebnis
+Die Konsole erkennt den Cluster und fügt ihn der Seite „Systeme“ hinzu, wobei der Clustername als Systemname verwendet wird.
+
+Sie können den Tiering-Dienst oder andere Dienste für diesen Cluster im rechten Bereich aktivieren.
+
+
+
+== Suchen Sie über alle Konsolenagenten nach einem Cluster
+
+Wenn Sie mehrere Agenten verwenden, um den gesamten Speicher in Ihrer Umgebung zu verwalten, befinden sich einige Cluster, auf denen Sie Tiering implementieren möchten, möglicherweise in einem anderen Agenten.  Wenn Sie nicht sicher sind, welcher Agent einen bestimmten Cluster verwaltet, können Sie mithilfe von Cloud Tiering über alle Agenten hinweg suchen.
+
+.Schritte
+. Wählen Sie in der Cloud Tiering-Menüleiste das Aktionsmenü und wählen Sie *In allen Agenten nach Clustern suchen*.
++
+image:screenshot_tiering_search for_cluster.png["Ein Screenshot, der zeigt, wie Sie nach einem Cluster suchen, der sich in einem Ihrer Agenten befinden kann."]
+
+. Geben Sie im angezeigten Suchdialogfeld den Namen des Clusters ein und wählen Sie *Suchen*.
++
+Cloud Tiering zeigt den Namen des Agenten an, wenn es den Cluster finden kann.
+
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Wechseln Sie zum Agenten und konfigurieren Sie das Tiering für den Cluster"^] .
+

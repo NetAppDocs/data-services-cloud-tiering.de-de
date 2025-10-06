@@ -1,0 +1,15 @@
+= Verwenden Sie ein benutzerdefiniertes Präfix für den Bucket-Namen
+:allow-uri-read: 
+
+
+
+
+=== Verwenden Sie ein benutzerdefiniertes Präfix für den Bucket-Namen
+
+In der Vergangenheit mussten Sie beim Definieren des Bucket-Namens das Standardpräfix „fabric-pool“ verwenden, z. B. _fabric-pool-bucket1_. Jetzt können Sie beim Benennen Ihres Buckets ein benutzerdefiniertes Präfix verwenden. Diese Funktion ist nur beim Tiering von Daten auf Amazon S3 verfügbar. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#prepare-your-aws-environment["Mehr erfahren"] .
+
+
+
+=== Suche nach einem Cluster über alle BlueXP Connectors
+
+Wenn Sie mehrere Connectors verwenden, um alle Speichersysteme in Ihrer Umgebung zu verwalten, befinden sich einige Cluster, auf denen Sie Tiering implementieren möchten, möglicherweise in unterschiedlichen Connectors. Wenn Sie nicht sicher sind, welcher Connector einen bestimmten Cluster verwaltet, können Sie mithilfe von Cloud Tiering über alle Connectors hinweg suchen. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors["Mehr erfahren"] .

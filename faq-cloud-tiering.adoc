@@ -1,0 +1,535 @@
+---
+sidebar: sidebar 
+permalink: faq-cloud-tiering.html 
+keywords: faq, questions, requirements, service connector, agent, object store, object storage, aws, azure, bucket, cluster, aggregate, s3, storage class, standard, inactive data reporting, auto, volume tiering policy, policy, tiering policy, snapshot, cold, inactive, infrequent, agent, netapp console, console,cloud tier 
+summary: Diese FAQ können hilfreich sein, wenn Sie nur schnell eine Antwort auf eine Frage suchen. 
+---
+= Technische FAQ zu NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Diese FAQ können hilfreich sein, wenn Sie nur eine schnelle Antwort auf eine Frage zum NetApp Cloud Tiering suchen.
+
+
+
+== Cloud Tiering-Dienst
+
+Die folgenden FAQs beziehen sich auf die Funktionsweise von Cloud Tiering.
+
+
+
+=== Welche Vorteile bietet die Nutzung des Cloud Tiering-Dienstes?
+
+Cloud Tiering bewältigt die Herausforderungen, die mit schnellem Datenwachstum einhergehen, und bietet Ihnen Vorteile wie:
+
+* Mühelose Erweiterung des Rechenzentrums in die Cloud für bis zu 50-mal mehr Speicherplatz
+* Speicheroptimierung, die eine durchschnittliche Speichereinsparung von 70 % ermöglicht
+* Reduzierte Gesamtbetriebskosten um durchschnittlich 30 %
+* Keine Notwendigkeit, Anwendungen zu refaktorieren
+
+
+
+
+=== Welche Art von Daten ist für die Auslagerung in die Cloud sinnvoll?
+
+Grundsätzlich eignen sich alle Daten, die sowohl auf primären als auch auf sekundären Speichersystemen als inaktiv gelten, gut für die Migration in die Cloud.  Auf Primärsystemen können solche Daten Snapshots, historische Aufzeichnungen und abgeschlossene Projekte umfassen.  Auf sekundären Systemen umfasst dies alle Volumes, die Kopien von Primärdaten enthalten, die für DR- und Sicherungszwecke erstellt wurden.
+
+
+
+=== Kann ich Daten sowohl von NAS-Volumes als auch von SAN-Volumes schichten?
+
+Ja, Sie können Daten von NAS-Volumes in die öffentliche Cloud oder in private Clouds wie StorageGRID verschieben.  Wenn Sie Daten schichten, auf die über SAN-Protokolle zugegriffen wird, empfiehlt NetApp die Verwendung privater Clouds, da SAN-Protokolle empfindlicher auf Verbindungsprobleme reagieren als NAS.
+
+
+
+=== Was ist die Definition inaktiver oder selten verwendeter Daten und wie werden diese kontrolliert?
+
+Die Definition dessen, was auch als kalte Daten bezeichnet werden kann, lautet: „Volume-Blöcke (Metadaten ausgeschlossen), auf die über einen bestimmten Zeitraum nicht zugegriffen wurde.“  Die „Zeitdauer“ wird durch ein Staffelungsrichtlinienattribut namens „Kühltage“ bestimmt.
+
+
+
+=== Werden meine Einsparungen bei der Speichereffizienz durch Cloud Tiering im Cloud Tier beibehalten?
+
+Ja, die Speichereffizienzen auf Volume-Ebene von ONTAP , wie Komprimierung, Deduplizierung und Verdichtung, bleiben beim Verschieben von Daten in die Cloud-Ebene erhalten.
+
+
+
+=== Was ist der Unterschied zwischen FabricPool und Cloud Tiering?
+
+FabricPool ist die ONTAP Tiering-Technologie, die über die ONTAP CLI und den System Manager selbst verwaltet oder über Cloud Tiering als Service verwaltet werden kann.  Cloud Tiering macht FabricPool zu einem verwalteten Dienst mit erweiterten Automatisierungsprozessen, sowohl auf ONTAP als auch in der Cloud, und bietet so mehr Transparenz und Kontrolle über das Tiering in Hybrid- und Multi-Cloud-Bereitstellungen.
+
+
+
+=== Können die in der Cloud gespeicherten Daten zur Notfallwiederherstellung oder zur Sicherung/Archivierung verwendet werden?
+
+Nein. Da die Metadaten des Volumes nie von der Leistungsebene getrennt werden, kann auf die im Objektspeicher gespeicherten Daten nicht direkt zugegriffen werden.
+
+Allerdings kann Cloud Tiering verwendet werden, um kostengünstige Backups und DR zu erreichen, indem es auf sekundären Systemen und SnapMirror Zielvolumes (DP-Volumes) aktiviert wird, um alle Daten (Metadaten ausgeschlossen) auszugliedern und so den Platzbedarf und die Gesamtbetriebskosten Ihres Rechenzentrums zu reduzieren.
+
+
+
+=== Wird Cloud Tiering auf Volume- oder Aggregatebene angewendet?
+
+Cloud Tiering wird auf Volume-Ebene aktiviert, indem jedem Volume eine Tiering-Richtlinie zugeordnet wird.  Die Identifizierung kalter Daten erfolgt auf Blockebene.
+
+
+
+=== Wie bestimmt Cloud Tiering, welche Blöcke in die Cloud eingeordnet werden?
+
+Die mit dem Volume verknüpfte Tiering-Richtlinie ist der Mechanismus, der steuert, welche Blöcke wann gestaffelt werden.  Die Richtlinie definiert die Art der Datenblöcke (Snapshots, Benutzerdaten oder beides) und die Kühlperiode. Sehenlink:concept-cloud-tiering.html#volume-tiering-policies["Volume-Tiering-Richtlinien"] für Details.
+
+
+
+=== Wie wirkt sich Cloud Tiering auf die Volume-Kapazität aus?
+
+Cloud Tiering hat keine Auswirkungen auf die Kapazität des Volumes, sondern auf die Nutzung der Leistungsstufe des Aggregats.
+
+
+
+=== Ermöglicht Cloud Tiering die Berichterstattung über inaktive Daten?
+
+Ja, Cloud Tiering ermöglicht die Berichterstattung über inaktive Daten (IDR) für jedes Aggregat.  Mit dieser Einstellung können wir die Menge inaktiver Daten ermitteln, die auf kostengünstigen Objektspeicher ausgelagert werden können.
+
+
+
+=== Wie lange dauert es, bis IDR ab dem Zeitpunkt, an dem ich es starte, Informationen anzeigt?
+
+IDR beginnt mit der Anzeige von Informationen, nachdem die konfigurierte Abkühlzeit abgelaufen ist.  Bei Verwendung von ONTAP 9.7 und früheren Versionen hatte IDR eine nicht anpassbare Kühlperiode von 31 Tagen.  Ab ONTAP 9.8 kann die IDR-Kühlperiode auf bis zu 183 Tage konfiguriert werden.
+
+
+
+== Lizenzen und Kosten
+
+Die folgenden FAQs beziehen sich auf die Lizenzierung und die Kosten für die Nutzung von Cloud Tiering.
+
+
+
+=== Wie viel kostet die Nutzung von Cloud Tiering?
+
+Beim Tiering von Cold Data in die öffentliche Cloud:
+
+* Für das nutzungsbasierte Pay-as-you-go-Abonnement (PAYGO): 0,05 $ pro GB/Monat.
+* Für das jährliche (BYOL), befristete Abonnement: ab 0,033 $ pro GB/Monat.
+
+
+https://bluexp.netapp.com/pricing["Preisdetails anzeigen"] .
+
+Beim Tiering von Cold Data auf ein NetApp StorageGRID System (private Cloud) entstehen keine Kosten.
+
+
+
+=== Kann ich für denselben ONTAP Cluster sowohl eine BYOL- als auch eine PAYGO-Lizenz haben?
+
+Ja. Cloud Tiering ermöglicht Ihnen die Verwendung einer BYOL-Lizenz, eines PAYGO-Abonnements oder einer Kombination aus beidem.
+
+
+
+=== Was passiert, wenn ich das BYOL-Kapazitätslimit erreicht habe oder meine BYOL-Lizenz abläuft?
+
+Wenn Sie das BYOL-Kapazitätslimit erreichen oder Ihre BYOL-Lizenz abläuft, wird die Einstufung neuer Cold Data gestoppt.  Auf alle zuvor abgestuften Daten kann weiterhin zugegriffen werden. Dies bedeutet, dass Sie diese Daten abrufen und verwenden können.  Beim Abrufen werden diese Daten aus der Cloud zurück in die Leistungsebene verschoben.
+
+Wenn Sie jedoch über ein PAYGO-Marktplatzabonnement für _BlueXP – Deploy & Manage Cloud Data Services_ verfügen, werden neue Cold Data weiterhin auf Objektspeicher verteilt und Sie zahlen diese Gebühren pro Nutzung.
+
+
+
+=== Sind die Ausgangsgebühren des Cloud-Anbieters in der Cloud-Tiering-Lizenz enthalten?
+
+Nein, das tut es nicht.
+
+
+
+=== Unterliegt die Rehydrierung des lokalen Systems den von den Cloud-Anbietern erhobenen Ausstiegskosten?
+
+Ja. Für alle Lesevorgänge aus der öffentlichen Cloud fallen Ausgangsgebühren an.
+
+
+
+=== Wie kann ich meine Cloud-Gebühren schätzen?  Gibt es einen „Was wäre wenn“-Modus für Cloud Tiering?
+
+Die beste Möglichkeit, die Kosten eines Cloud-Anbieters für das Hosting Ihrer Daten abzuschätzen, ist die Verwendung seiner Rechner: https://calculator.aws/#/["AWS"] , https://azure.microsoft.com/en-us/pricing/calculator/["Azurblau"] Und https://cloud.google.com/products/calculator["Google Cloud"] .
+
+
+
+=== Fallen bei den Cloud-Anbietern zusätzliche Gebühren für das Lesen/Abrufen von Daten aus dem Objektspeicher in den lokalen Speicher an?
+
+
+
+=== Fallen bei den Cloud-Anbietern zusätzliche Gebühren für das Lesen/Abrufen von Daten aus dem Objektspeicher in den lokalen Speicher an?
+
+Ja. Überprüfen https://aws.amazon.com/s3/pricing/["Amazon S3-Preise"] , https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Block Blob-Preise"] , Und https://cloud.google.com/storage/pricing["Preise für Cloud-Speicher"] für zusätzliche Kosten, die beim Lesen/Abrufen von Daten anfallen.
+
+
+
+=== Wie kann ich die Einsparungen meiner Volumes schätzen und einen Cold-Data-Bericht erhalten, bevor ich Cloud Tiering aktiviere?
+
+Um eine Schätzung zu erhalten, fügen Sie Ihren ONTAP Cluster zur NetApp Konsole hinzu und überprüfen Sie ihn über die Seite „Cloud Tiering Clusters“.  Wählen Sie *Potenzielle Tiering-Einsparungen berechnen* für den Cluster aus, um den https://bluexp.netapp.com/cloud-tiering-service-tco["TCO-Rechner für Cloud Tiering"^] um zu sehen, wie viel Geld Sie sparen können.
+
+
+
+=== Wie wird mir die Staffelung in Rechnung gestellt, wenn ich einen ONTAP MetroCluster verwende?
+
+Bei Verwendung in MetroCluster -Umgebungen wird die Gesamt-Tiering-Lizenz auf die Nutzung beider Cluster angewendet.  Wenn Sie beispielsweise über eine Lizenz für 100 TiB Tiering verfügen, trägt die genutzte Tiering-Kapazität jedes Clusters zur Gesamtkapazität von 100 TiB bei.
+
+
+
+== ONTAP
+
+Die folgenden Fragen beziehen sich auf ONTAP.
+
+
+
+=== Welche ONTAP -Versionen werden von Cloud Tiering unterstützt?
+
+Cloud Tiering unterstützt ONTAP Version 9.2 und höher.
+
+
+
+=== Welche Arten von ONTAP -Systemen werden unterstützt?
+
+Cloud Tiering wird mit Einzelknoten- und Hochverfügbarkeitsclustern AFF, FAS und ONTAP Select unterstützt.  Cluster in FabricPool Mirror-Konfigurationen und MetroCluster -Konfigurationen werden ebenfalls unterstützt.
+
+
+
+=== Kann ich Daten von FAS -Systemen nur mit HDDs schichten?
+
+Ja, ab ONTAP 9.8 können Sie Daten von Volumes, die auf HDD-Aggregaten gehostet werden, stufen.
+
+
+
+=== Kann ich Daten von einem AFF , das einem Cluster beitritt, der FAS Knoten mit HDDs hat, stufen?
+
+Ja. Cloud Tiering kann so konfiguriert werden, dass Volumes, die auf einem beliebigen Aggregat gehostet werden, in Stufen unterteilt werden.  Die Datenschichtungskonfiguration ist für den verwendeten Controllertyp und die Frage, ob der Cluster heterogen ist oder nicht, irrelevant.
+
+
+
+=== Was ist mit Cloud Volumes ONTAP?
+
+Wenn Sie über Cloud Volumes ONTAP -Systeme verfügen, finden Sie diese auf der Seite „Cloud Tiering Clusters“, sodass Sie einen vollständigen Überblick über die Datenschichtung in Ihrer Hybrid-Cloud-Infrastruktur erhalten.  Allerdings sind Cloud Volumes ONTAP -Systeme von Cloud Tiering schreibgeschützt.  Sie können über Cloud Tiering kein Daten-Tiering auf Cloud Volumes ONTAP einrichten. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Sie richten Tiering für Cloud Volumes ONTAP -Systeme vom ONTAP -System in der NetApp Konsole ein"^] .
+
+
+
+=== Welche weiteren Voraussetzungen sind für meine ONTAP Cluster erforderlich?
+
+Es hängt davon ab, wo Sie die kalten Daten einstufen.  Weitere Einzelheiten finden Sie unter den folgenden Links:
+
+* link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster["Tiering von Daten zu Amazon S3"]
+* link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Tiering von Daten in Azure Blob Storage"]
+* link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters["Tiering von Daten in Google Cloud Storage"]
+* link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters["Tiering von Daten zu StorageGRID"]
+* link:task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters["Tiering von Daten in den S3-Objektspeicher"]
+
+
+
+
+== Objektspeicher
+
+Die folgenden Fragen beziehen sich auf die Objektspeicherung.
+
+
+
+=== Welche Objektspeicheranbieter werden unterstützt?
+
+Cloud Tiering unterstützt die folgenden Objektspeicheranbieter:
+
+* Amazon S3
+* Microsoft Azure Blob
+* Google Cloud-Speicher
+* NetApp StorageGRID
+* S3-kompatibler Objektspeicher (z. B. MinIO)
+* IBM Cloud Object Storage (die FabricPool -Konfiguration muss mit System Manager oder der ONTAP CLI erfolgen)
+
+
+
+
+=== Kann ich meinen eigenen Eimer/Behälter verwenden?
+
+Ja, das können Sie. Wenn Sie die Datenschichtung einrichten, haben Sie die Wahl, einen neuen Bucket/Container hinzuzufügen oder einen vorhandenen Bucket/Container auszuwählen.
+
+
+
+=== Welche Regionen werden unterstützt?
+
+* link:reference-aws-support.html["Unterstützte AWS-Regionen"]
+* link:reference-azure-support.html["Unterstützte Azure-Regionen"]
+* link:reference-google-support.html["Unterstützte Google Cloud-Regionen"]
+
+
+
+
+=== Welche S3-Speicherklassen werden unterstützt?
+
+Cloud Tiering unterstützt die Dateneinteilung in die Speicherklassen _Standard_, _Standard-Infrequent Access_, _One Zone-Infrequent Access_, _Intelligent Tiering_ und _Glacier Instant Retrieval_. Sehenlink:reference-aws-support.html["Unterstützte S3-Speicherklassen"] für weitere Details.
+
+
+
+=== Warum werden Amazon S3 Glacier Flexible und S3 Glacier Deep Archive nicht von Cloud Tiering unterstützt?
+
+Der Hauptgrund, warum Amazon S3 Glacier Flexible und S3 Glacier Deep Archive nicht unterstützt werden, besteht darin, dass Cloud Tiering als Hochleistungs-Tiering-Lösung konzipiert ist, sodass Daten kontinuierlich verfügbar und schnell zum Abrufen zugänglich sein müssen.  Mit S3 Glacier Flexible und S3 Glacier Deep Archive kann der Datenabruf zwischen einigen Minuten und 48 Stunden dauern.
+
+
+
+=== Kann ich mit Cloud Tiering andere S3-kompatible Objektspeicherdienste wie MinIO verwenden?
+
+Ja, die Konfiguration von S3-kompatiblem Objektspeicher über die Tiering-Benutzeroberfläche wird für Cluster mit ONTAP 9.8 und höher unterstützt. link:task-tiering-onprem-s3-compat.html["Einzelheiten finden Sie hier"] .
+
+
+
+=== Welche Azure Blob-Zugriffsebenen werden unterstützt?
+
+Cloud Tiering unterstützt die Dateneinteilung in die Zugriffsebenen „Hot“ oder „Cool“ für Ihre inaktiven Daten. Sehenlink:reference-azure-support.html["Unterstützte Azure Blob-Zugriffsebenen"] für weitere Details.
+
+
+
+=== Welche Speicherklassen werden für Google Cloud Storage unterstützt?
+
+Cloud Tiering unterstützt die Dateneinteilung in die Speicherklassen _Standard_, _Nearline_, _Coldline_ und _Archive_. Sehenlink:reference-google-support.html["Unterstützte Google Cloud-Speicherklassen"] für weitere Details.
+
+
+
+=== Unterstützt Cloud Tiering die Verwendung von Richtlinien zur Lebenszyklusverwaltung?
+
+Ja. Sie können die Lebenszyklusverwaltung aktivieren, sodass Cloud Tiering Daten nach einer bestimmten Anzahl von Tagen von der Standardspeicherklasse/Zugriffsebene auf eine kostengünstigere Ebene überträgt.  Die Lebenszyklusregel wird auf alle Objekte im ausgewählten Bucket für Amazon S3- und Google Cloud-Speicher und auf alle Container im ausgewählten Speicherkonto für Azure Blob angewendet.
+
+
+
+=== Verwendet Cloud Tiering einen Objektspeicher für den gesamten Cluster oder einen pro Aggregat?
+
+In einer typischen Konfiguration gibt es einen Objektspeicher für den gesamten Cluster.  Ab August 2022 können Sie auf der Seite *Erweiterte Einrichtung* zusätzliche Objektspeicher für einen Cluster hinzufügen und dann verschiedene Objektspeicher an verschiedene Aggregate anhängen oder zwei Objektspeicher zum Spiegeln an ein Aggregat anhängen.
+
+
+
+=== Können mehrere Schaufeln an dasselbe Aggregat angeschlossen werden?
+
+Es ist möglich, bis zu zwei Buckets pro Aggregat zum Zweck der Spiegelung anzuhängen, wobei kalte Daten synchron auf beide Buckets verteilt werden.  Die Buckets können von unterschiedlichen Anbietern und unterschiedlichen Standorten stammen.  Ab August 2022 können Sie auf der Seite *Erweiterte Einrichtung* zwei Objektspeicher an ein einzelnes Aggregat anhängen.
+
+
+
+=== Können verschiedene Buckets an verschiedene Aggregate im selben Cluster angehängt werden?
+
+Ja. Die allgemein bewährte Vorgehensweise besteht darin, einen einzelnen Bucket an mehrere Aggregate anzuhängen.  Bei der Verwendung der öffentlichen Cloud gibt es jedoch eine maximale IOPS-Beschränkung für die Objektspeicherdienste, daher müssen mehrere Buckets berücksichtigt werden.
+
+
+
+=== Was passiert mit den mehrstufigen Daten, wenn Sie ein Volume von einem Cluster zu einem anderen migrieren?
+
+Beim Migrieren eines Volumes von einem Cluster zu einem anderen werden alle kalten Daten aus der Cloud-Ebene gelesen.  Der Schreibspeicherort im Zielcluster hängt davon ab, ob Tiering aktiviert wurde und welche Art von Tiering-Richtlinie auf den Quell- und Zielvolumes verwendet wird.
+
+
+
+=== Was passiert mit den mehrstufigen Daten, wenn Sie ein Volume von einem Knoten zu einem anderen im selben Cluster verschieben?
+
+Wenn dem Zielaggregat keine Cloud-Ebene zugeordnet ist, werden die Daten aus der Cloud-Ebene des Quellaggregats gelesen und vollständig in die lokale Ebene des Zielaggregats geschrieben.  Wenn das Zielaggregat über eine angehängte Cloud-Ebene verfügt, werden die Daten aus der Cloud-Ebene des Quellaggregats gelesen und zunächst in die lokale Ebene des Zielaggregats geschrieben, um eine schnelle Umstellung zu ermöglichen.  Später wird es basierend auf der verwendeten Tiering-Richtlinie in die Cloud-Stufe geschrieben.
+
+Ab ONTAP 9.6 werden die kalten Daten nicht zurück in die lokale Ebene verschoben, wenn das Zielaggregat dieselbe Cloud-Ebene wie das Quellaggregat verwendet.
+
+
+
+=== Wie kann ich meine gestaffelten Daten vor Ort wieder auf die Leistungsstufe bringen?
+
+Das Zurückschreiben wird im Allgemeinen bei Lesevorgängen durchgeführt und hängt vom Tiering-Richtlinientyp ab.  Vor ONTAP 9.8 kann das Zurückschreiben des gesamten Volumes mit einem _Volume Move_-Vorgang erfolgen.  Ab ONTAP 9.8 verfügt die Tiering-Benutzeroberfläche über die Optionen „Alle Daten wiederherstellen“ oder „Aktives Dateisystem wiederherstellen“. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier["Erfahren Sie, wie Sie Daten zurück in die Leistungsebene verschieben"] .
+
+
+
+=== Werden die mehrstufigen Daten beim Ersetzen eines vorhandenen AFF/ FAS -Controllers durch einen neuen wieder vor Ort migriert?
+
+Nein. Beim „Head Swap“-Verfahren ändert sich lediglich der Besitz des Aggregats.  In diesem Fall erfolgt die Umstellung auf den neuen Controller ohne Datenverschiebung.
+
+
+
+=== Kann ich die in einem Bucket geschichteten Daten mithilfe der Konsole oder der Objektspeicher-Explorer des Cloud-Anbieters anzeigen?  Kann ich die im Objektspeicher gespeicherten Daten direkt ohne ONTAP verwenden?
+
+Nein. Die erstellten und in die Cloud verschobenen Objekte enthalten keine einzelne Datei, sondern bis zu 1.024 4-KB-Blöcke aus mehreren Dateien.  Die Metadaten eines Volumes verbleiben immer auf der lokalen Ebene.
+
+
+
+== Konsolenagenten
+
+Die folgenden Fragen beziehen sich auf den Konsolenagenten.
+
+
+
+=== Was ist der Konsolenagent?
+
+Der Konsolenagent ist eine Software, die auf einer Compute-Instanz entweder innerhalb Ihres Cloud-Kontos oder vor Ort ausgeführt wird und es der NetApp Konsole ermöglicht, Cloud-Ressourcen sicher zu verwalten.  Um den Cloud Tiering-Dienst zu verwenden, müssen Sie einen Agenten bereitstellen.
+
+
+
+=== Wo muss der Konsolenagent installiert werden?
+
+* Wenn Sie Daten auf S3 auslagern, kann sich der Agent in einem AWS VPC oder bei Ihnen vor Ort befinden.
+* Wenn Sie Daten in Blob-Speicher verschieben, kann sich der Agent in einem Azure VNet oder bei Ihnen vor Ort befinden.
+* Wenn Sie Daten in Google Cloud Storage einstufen, muss sich der Agent in einem Google Cloud Platform VPC befinden.
+* Wenn Sie Daten auf StorageGRID oder andere S3-kompatible Speicheranbieter auslagern, muss sich der Agent in Ihren Räumlichkeiten befinden.
+
+
+
+
+=== Kann ich den Konsolenagenten vor Ort bereitstellen?
+
+Ja. Die Agentensoftware kann heruntergeladen und manuell auf einem Linux-Host in Ihrem Netzwerk installiert werden. https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Erfahren Sie, wie Sie den Agenten in Ihren Räumlichkeiten installieren."] .
+
+
+
+=== Ist vor der Nutzung von Cloud Tiering ein Konto bei einem Cloud-Dienstanbieter erforderlich?
+
+Ja. Sie müssen über ein Konto verfügen, bevor Sie den Objektspeicher definieren können, den Sie verwenden möchten.  Für die Einrichtung des Agenten in der Cloud auf einer VPC oder einem VNet ist außerdem ein Konto bei einem Cloud-Speicheranbieter erforderlich.
+
+
+
+=== Welche Auswirkungen hat ein Ausfall des Konsolenagenten?
+
+Im Falle eines Agentenausfalls ist nur die Sichtbarkeit in den mehrstufigen Umgebungen beeinträchtigt.  Auf alle Daten kann zugegriffen werden und neu identifizierte Cold Data werden automatisch in den Objektspeicher verschoben.
+
+
+
+== Tiering-Richtlinien
+
+
+
+=== Welche Staffelungsrichtlinien sind verfügbar?
+
+Es gibt vier Staffelungsrichtlinien:
+
+* Keine: Klassifiziert alle Daten als immer heiß und verhindert, dass Daten vom Datenträger in den Objektspeicher verschoben werden.
+* Kalte Snapshots (nur Snapshot): Nur Blöcke kalter Snapshots werden in den Objektspeicher verschoben.
+* Kalte Benutzerdaten und Snapshots (Auto): Sowohl kalte Snapshot-Blöcke als auch kalte Benutzerdatenblöcke werden in den Objektspeicher verschoben.
+* Alle Benutzerdaten (Alle): Klassifiziert alle Daten als kalt und verschiebt das gesamte Volume sofort in den Objektspeicher.
+
+
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Tiering-Richtlinien"] .
+
+
+
+=== Ab wann gelten meine Daten als kalt?
+
+Da die Datenklassifizierung auf Blockebene erfolgt, gilt ein Datenblock als kalt, wenn für einen bestimmten Zeitraum, der durch das Attribut „Minimum Cooling Days“ der Klassifizierungsrichtlinie definiert wird, nicht auf ihn zugegriffen wurde.  Der anwendbare Bereich beträgt 2–63 Tage bei ONTAP 9.7 und früher oder 2–183 Tage ab ONTAP 9.8.
+
+
+
+=== Was ist die standardmäßige Abkühlphase für Daten, bevor sie in die Cloud-Ebene verschoben werden?
+
+Die Standard-Kühlperiode für die Cold Snapshot-Richtlinie beträgt 2 Tage, während die Standard-Kühlperiode für Cold User Data und Snapshots 31 Tage beträgt.  Der Parameter „Kühltage“ ist auf die Tiering-Richtlinie „Alle“ nicht anwendbar.
+
+
+
+=== Werden alle mehrstufigen Daten aus dem Objektspeicher abgerufen, wenn ich eine vollständige Sicherung durchführe?
+
+Während einer vollständigen Sicherung werden alle kalten Daten gelesen.  Der Abruf der Daten hängt von der verwendeten Tiering-Richtlinie ab.  Bei Verwendung der Richtlinien „Alle“ und „Kalte Benutzerdaten und Snapshots“ werden die kalten Daten nicht in die Leistungsebene zurückgeschrieben.  Bei Verwendung der Richtlinie „Cold Snapshots“ werden die Cold Blocks nur dann abgerufen, wenn für die Sicherung ein alter Snapshot verwendet wird.
+
+
+
+=== Können Sie eine Staffelungsgröße pro Volume auswählen?
+
+Nein. Sie können jedoch auswählen, welche Volumes für die Einstufung infrage kommen, welche Art von Daten in eine Einstufung einbezogen werden sollen und welche Abkühlungsphase vorgesehen ist.  Dies geschieht durch die Zuordnung einer Tiering-Richtlinie zu diesem Volume.
+
+
+
+=== Ist die Richtlinie „Alle Benutzerdaten“ die einzige Option für Datenschutzvolumes?
+
+Nein. Datenschutzvolumes (DP) können mit jeder der drei verfügbaren Richtlinien verknüpft werden.  Der auf den Quell- und Zielvolumes (DP) verwendete Richtlinientyp bestimmt den Schreibspeicherort der Daten.
+
+
+
+=== Werden durch das Zurücksetzen der Tiering-Richtlinie eines Volumes auf „Keine“ die kalten Daten rehydriert oder wird lediglich verhindert, dass zukünftige kalte Blöcke in die Cloud verschoben werden?
+
+Beim Zurücksetzen einer Tiering-Richtlinie findet keine Rehydrierung statt, es wird jedoch verhindert, dass neue Cold Blocks in die Cloud-Ebene verschoben werden.
+
+
+
+=== Kann ich die Tiering-Richtlinie ändern, nachdem ich die Daten in die Cloud verschoben habe?
+
+Ja. Das Verhalten nach der Änderung hängt von der neuen zugehörigen Richtlinie ab.
+
+
+
+=== Was muss ich tun, wenn ich sicherstellen möchte, dass bestimmte Daten nicht in die Cloud verschoben werden?
+
+Ordnen Sie dem Volume, das diese Daten enthält, keine Tiering-Richtlinie zu.
+
+
+
+=== Wo werden die Metadaten der Dateien gespeichert?
+
+Die Metadaten eines Volumes werden immer lokal auf der Leistungsebene gespeichert – sie werden nie in die Cloud verschoben.
+
+
+
+== Vernetzung und Sicherheit
+
+Die folgenden Fragen beziehen sich auf Vernetzung und Sicherheit.
+
+
+
+=== Welche Netzwerkanforderungen gibt es?
+
+* Der ONTAP Cluster initiiert über Port 443 eine HTTPS-Verbindung zu Ihrem Objektspeicheranbieter.
++
+ONTAP liest und schreibt Daten in den und aus dem Objektspeicher.  Der Objektspeicher wird nie initiiert, er reagiert nur.
+
+* Für StorageGRID initiiert der ONTAP Cluster eine HTTPS-Verbindung über einen benutzerdefinierten Port zu StorageGRID (der Port kann während der Tiering-Einrichtung konfiguriert werden).
+* Ein Agent benötigt eine ausgehende HTTPS-Verbindung über Port 443 zu Ihren ONTAP Clustern, zum Objektspeicher und zum Cloud Tiering-Dienst.
+
+
+Weitere Einzelheiten finden Sie unter:
+
+* link:task-tiering-onprem-aws.html["Tiering von Daten zu Amazon S3"]
+* link:task-tiering-onprem-azure.html["Tiering von Daten in Azure Blob Storage"]
+* link:task-tiering-onprem-gcp.html["Tiering von Daten in Google Cloud Storage"]
+* link:task-tiering-onprem-storagegrid.html["Tiering von Daten zu StorageGRID"]
+* link:task-tiering-onprem-s3-compat.html["Tiering von Daten in den S3-Objektspeicher"]
+
+
+
+
+=== Welche Tools kann ich für die Überwachung und Berichterstattung verwenden, um in der Cloud gespeicherte kalte Daten zu verwalten?
+
+Anders als Cloud Tiering, https://docs.netapp.com/us-en/active-iq-unified-manager/["Active IQ Unified Manager"^] Und https://docs.netapp.com/us-en/active-iq/index.html["digitaler Berater"^] kann zur Überwachung und Berichterstattung verwendet werden.
+
+
+
+=== Welche Auswirkungen hat es, wenn die Netzwerkverbindung zum Cloud-Anbieter ausfällt?
+
+Im Falle eines Netzwerkausfalls bleibt die lokale Leistungsebene online und auf die Hot Data kann weiterhin zugegriffen werden.  Auf Blöcke, die bereits in die Cloud-Ebene verschoben wurden, kann jedoch nicht zugegriffen werden, und Anwendungen erhalten eine Fehlermeldung, wenn sie versuchen, auf diese Daten zuzugreifen.  Sobald die Verbindung wiederhergestellt ist, sind alle Daten nahtlos zugänglich.
+
+
+
+=== Gibt es eine Empfehlung für die Netzwerkbandbreite?
+
+Die Leselatenz der zugrunde liegenden FabricPool -Tiering-Technologie hängt von der Konnektivität zur Cloud-Ebene ab.  Obwohl die Tiering-Funktion bei jeder Bandbreite funktioniert, wird empfohlen, Intercluster-LIFs auf 10-Gbit/s-Ports zu platzieren, um eine ausreichende Leistung zu gewährleisten.  Für den Agenten gibt es keine Empfehlungen oder Bandbreitenbeschränkungen.
+
+Darüber hinaus können Sie die Netzwerkbandbreite drosseln, die während der Übertragung inaktiver Daten vom Volume zum Objektspeicher verwendet wird.  Die Einstellung „Maximale Übertragungsrate“ ist verfügbar, wenn Sie Ihren Cluster für die Tiering-Konfiguration konfigurieren und anschließend auf der Seite „Cluster“ verfügbar.
+
+
+
+=== Gibt es eine Latenz, wenn ein Benutzer versucht, auf mehrstufige Daten zuzugreifen?
+
+Ja. Cloud-Ebenen können nicht dieselbe Latenz wie die lokale Ebene bieten, da die Latenz von der Konnektivität abhängt.  Um die Latenz und den Durchsatz eines Objektspeichers abzuschätzen, bietet Cloud Tiering einen Cloud-Leistungstest (basierend auf dem ONTAP Objektspeicher-Profiler), der nach dem Anhängen des Objektspeichers und vor der Einrichtung des Tierings verwendet werden kann.
+
+
+
+=== Wie werden meine Daten gesichert?
+
+Die AES-256-GCM-Verschlüsselung wird sowohl auf der Leistungs- als auch auf der Cloud-Ebene beibehalten.  Die TLS 1.2-Verschlüsselung wird verwendet, um Daten über die Leitung zu verschlüsseln, während sie zwischen den Ebenen übertragen werden, und um die Kommunikation zwischen dem Agenten und sowohl dem ONTAP Cluster als auch dem Objektspeicher zu verschlüsseln.
+
+
+
+=== Muss auf meinem AFF ein Ethernet-Port installiert und konfiguriert sein?
+
+Ja. Auf jedem Knoten innerhalb eines HA-Paares, das Volumes mit Daten hostet, die Sie in die Cloud verschieben möchten, muss ein Intercluster-LIF auf einem Ethernet-Port konfiguriert werden.  Weitere Informationen finden Sie im Abschnitt „Anforderungen“ für den Cloud-Anbieter, bei dem Sie die Datenschichtung planen.
+
+
+
+=== Welche Berechtigungen sind erforderlich?
+
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Für Amazon sind Berechtigungen zur Verwaltung des S3-Buckets erforderlich"] .
+* Für Azure sind keine weiteren Berechtigungen erforderlich, abgesehen von den Berechtigungen, die Sie der NetApp Konsole erteilen müssen.
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Für Google Cloud sind Storage-Admin-Berechtigungen für ein Dienstkonto erforderlich, das über Speicherzugriffsschlüssel verfügt"] .
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["Für StorageGRID sind S3-Berechtigungen erforderlich"] .
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["Für S3-kompatiblen Objektspeicher sind S3-Berechtigungen erforderlich"] .
+

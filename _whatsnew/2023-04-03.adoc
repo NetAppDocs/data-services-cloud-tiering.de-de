@@ -1,0 +1,15 @@
+= Die Registerkarte „Lizenzierung“ wurde entfernt
+:allow-uri-read: 
+
+
+
+
+=== Die Registerkarte „Lizenzierung“ wurde entfernt
+
+Die Registerkarte „Lizenzierung“ wurde aus der Cloud Tiering-Schnittstelle entfernt.  Auf alle Lizenzen für Pay-as-you-go-Abonnements (PAYGO) kann jetzt über das Cloud Tiering On-Premises-Dashboard zugegriffen werden.  Auf dieser Seite gibt es auch einen Link zur BlueXP digital wallet, sodass Sie alle Bring-Your-Own-Lizenzen (BYOL) für Cloud Tiering anzeigen und verwalten können.
+
+
+
+=== Die Registerkarten für die Einstufung wurden umbenannt und aktualisiert.
+
+Die Registerkarte „Cluster-Dashboard“ wurde in „Cluster“ umbenannt und die Registerkarte „On-Prem-Übersicht“ wurde in „On-Premises-Dashboard“ umbenannt.  Auf diesen Seiten finden Sie einige Informationen, die Ihnen bei der Beurteilung helfen, ob Sie Ihren Speicherplatz mit einer zusätzlichen Tiering-Konfiguration optimieren können.

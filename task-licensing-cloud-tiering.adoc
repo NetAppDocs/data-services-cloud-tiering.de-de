@@ -1,0 +1,234 @@
+---
+sidebar: sidebar 
+permalink: task-licensing-cloud-tiering.html 
+keywords: subscribe, digital wallet, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering, license, cloud tiering, bluexp 
+summary: Eine 30-tägige kostenlose Testversion von NetApp Cloud Tiering beginnt, wenn Sie Tiering von Ihrem ersten Cluster aus einrichten.  Nach Ablauf der kostenlosen Testversion müssen Sie für Cloud Tiering über ein Pay-as-you-go- oder Jahresabonnement vom Marktplatz Ihres Cloud-Anbieters, eine BYOL-Lizenz von NetApp oder eine Kombination aus beidem bezahlen. 
+---
+= Einrichten der Lizenzierung für NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Eine 30-tägige kostenlose Testversion von NetApp Cloud Tiering beginnt, wenn Sie Tiering von Ihrem ersten Cluster aus einrichten.  Nach Ablauf der kostenlosen Testversion müssen Sie für Cloud Tiering über ein Pay-as-you-go- oder Jahresabonnement vom Marktplatz Ihres Cloud-Anbieters, eine BYOL-Lizenz von NetApp oder eine Kombination aus beidem bezahlen.
+
+Ein paar Anmerkungen, bevor Sie weiterlesen:
+
+* Wenn Sie Cloud Tiering (PAYGO) bereits im Marktplatz Ihres Cloud-Anbieters abonniert haben, sind Sie automatisch auch für lokale ONTAP -Systeme bei Cloud Tiering angemeldet.  Sie sehen ein aktives Abonnement auf der Registerkarte „Cloud Tiering *On-Premises-Dashboard*“.  Sie müssen sich nicht erneut anmelden.  In der NetApp Konsole wird ein aktives Abonnement angezeigt.
+* Die BYOL Cloud Tiering-Lizenz (früher als „Cloud Tiering“-Lizenz bekannt) ist eine Floating-Lizenz, die Sie für mehrere lokale ONTAP Cluster in Ihrer NetApp Console-Organisation verwenden können.  Dies ist anders (und viel einfacher) als in der Vergangenheit, als Sie für jeden Cluster eine _FabricPool_-Lizenz erworben haben.
+* Beim Tiering von Daten auf StorageGRID fallen keine Gebühren an, daher ist weder eine BYOL-Lizenz noch eine PAYGO-Registrierung erforderlich.  Diese abgestuften Daten werden nicht auf die in Ihrer Lizenz erworbene Kapazität angerechnet.
+
+
+link:concept-cloud-tiering.html#pricing-and-licenses["Erfahren Sie mehr über die Funktionsweise der Lizenzierung für Cloud Tiering"] .
+
+
+
+== 30 Tage kostenlos testen
+
+Wenn Sie keine Cloud Tiering-Lizenz haben, beginnt eine 30-tägige kostenlose Testversion von Cloud Tiering, wenn Sie das Tiering für Ihren ersten Cluster einrichten.  Nach Ablauf der 30-tägigen kostenlosen Testversion müssen Sie für Cloud Tiering über ein Pay-as-you-go-Abonnement, ein Jahresabonnement, eine BYOL-Lizenz oder eine Kombination davon bezahlen.
+
+Wenn Ihre kostenlose Testversion endet und Sie kein Abonnement abgeschlossen oder eine Lizenz hinzugefügt haben, führt ONTAP keine Tiering-Verteilung von Cold Data mehr in den Objektspeicher durch.  Auf alle zuvor abgestuften Daten kann weiterhin zugegriffen werden. Dies bedeutet, dass Sie diese Daten abrufen und verwenden können.  Beim Abrufen werden diese Daten aus der Cloud zurück in die Leistungsebene verschoben.
+
+
+
+== Verwenden Sie ein Cloud Tiering PAYGO-Abonnement
+
+Mit Pay-as-you-go-Abonnements vom Marktplatz Ihres Cloud-Anbieters können Sie die Nutzung von Cloud Volumes ONTAP Systemen und vielen Cloud-Datendiensten wie Cloud Tiering lizenzieren.
+
+Nachdem Sie Cloud Tiering abonniert haben, können Sie Ihre Abonnements in der Konsole verwalten.link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-subscriptions.html#view-your-subscriptions["Zeigen Sie Ihre Abonnements an und verwalten Sie sie."^]
+
+
+
+=== Abonnieren über den AWS Marketplace
+
+Abonnieren Sie Cloud Tiering vom AWS Marketplace, um ein Pay-as-you-go-Abonnement für das Daten-Tiering von ONTAP Clustern zu AWS S3 einzurichten.
+
+[[subscribe-aws]]
+.Schritte
+. Wählen Sie in der NetApp Konsole *Mobilität > Cloud-Tiering > On-Premises-Dashboard*.
+. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Amazon Web Services“ die Option „Abonnieren“ und dann „Weiter“ aus.
+. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Amazon Web Services“ die Option „Abonnieren“ und dann „Weiter“ aus.
+. Abonnieren Sie von der https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWS Marketplace"^] und melden Sie sich dann erneut bei der NetApp Konsole an, um die Registrierung abzuschließen.
++
+Das folgende Video zeigt den Vorgang:
+
++
+.Abonnieren Sie über den AWS Marketplace
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
+
+
+
+
+=== Abonnieren über den Azure Marketplace
+
+Abonnieren Sie Cloud Tiering vom Azure Marketplace, um ein Pay-as-you-go-Abonnement für das Daten-Tiering von ONTAP Clustern zu Azure Blob Storage einzurichten.
+
+[[subscribe-azure]]
+.Schritte
+. Wählen Sie in der NetApp Konsole *Mobilität > Cloud-Tiering > On-Premises-Dashboard*.
+. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Microsoft Azure“ die Option „Abonnieren“ und dann „Weiter“ aus.
+. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Microsoft Azure“ die Option „Abonnieren“ und dann „Weiter“ aus.
+. Abonnieren Sie von der https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure Marketplace"^] und melden Sie sich dann erneut bei der NetApp Konsole an, um die Registrierung abzuschließen.
++
+Das folgende Video zeigt den Vorgang:
+
++
+.Abonnieren über den Azure Marketplace
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
+
+
+
+
+=== Abonnieren über den Google Cloud Marketplace
+
+Abonnieren Sie Cloud Tiering vom Google Cloud Marketplace, um ein Pay-as-you-go-Abonnement für das Data Tiering von ONTAP Clustern zu Google Cloud Storage einzurichten.
+
+[[subscribe-gcp]]
+.Schritte
+. Wählen Sie in der NetApp Konsole *Mobilität > Cloud-Tiering > On-Premises-Dashboard*.
+. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Google Cloud“ die Option „Abonnieren“ und dann „Weiter“ aus.
+. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Google Cloud“ die Option „Abonnieren“ und dann „Weiter“ aus.
+. Abonnieren Sie von der https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Cloud Marketplace"^] und melden Sie sich dann erneut bei der NetApp Konsole an, um die Registrierung abzuschließen.
++
+Das folgende Video zeigt den Vorgang:
+
++
+.Abonnieren Sie über den Google Cloud Marketplace
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
+
+
+
+
+== Verwenden Sie einen Jahresvertrag
+
+Bezahlen Sie jährlich für Cloud Tiering, indem Sie einen Jahresvertrag abschließen.  Jahresverträge sind mit einer Laufzeit von 1, 2 oder 3 Jahren erhältlich.
+
+Wenn Sie inaktive Daten auf AWS auslagern, können Sie einen Jahresvertrag von der https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace-Seite"^] .  Wenn Sie diese Option nutzen möchten, richten Sie Ihr Abonnement auf der Marketplace-Seite ein und dann https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["Verknüpfen Sie das Abonnement mit Ihren AWS-Anmeldeinformationen"^] .
+
+Wenn Sie inaktive Daten in Azure verschieben, können Sie einen Jahresvertrag von der https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Azure Marketplace-Seite"^] .  Wenn Sie diese Option nutzen möchten, richten Sie Ihr Abonnement auf der Marketplace-Seite ein und dann https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe["Verknüpfen Sie das Abonnement mit Ihren Azure-Anmeldeinformationen"^] .
+
+Beim Tiering zu Google Cloud werden derzeit keine Jahresverträge unterstützt.
+
+
+
+== Verwenden Sie eine Cloud Tiering BYOL-Lizenz
+
+Bring-Your-Own-Lizenzen von NetApp haben eine Laufzeit von 1, 2 oder 3 Jahren.  Die BYOL *Cloud Tiering*-Lizenz (früher als „Cloud Tiering“-Lizenz bekannt) ist eine _Floating_-Lizenz, die Sie für mehrere lokale ONTAP Cluster in Ihrer NetApp Console-Organisation verwenden können.  Die in Ihrer Cloud-Tiering-Lizenz definierte Gesamtkapazität wird unter *allen* Ihren lokalen Clustern geteilt, was die Erstlizenzierung und -verlängerung vereinfacht.  Die Mindestkapazität für eine gestaffelte BYOL-Lizenz beginnt bei 10 TiB.
+
+Wenn Sie keine Cloud Tiering-Lizenz haben, kontaktieren Sie uns, um eine zu erwerben:
+
+* Kontaktieren Sie Ihren NetApp Vertriebsmitarbeiter
+* Wenden Sie sich an den NetApp Support.
+
+
+Wenn Sie über eine nicht zugewiesene knotenbasierte Lizenz für Cloud Volumes ONTAP verfügen, die Sie nicht verwenden, können Sie diese optional in eine Cloud Tiering-Lizenz mit demselben Dollaräquivalent und demselben Ablaufdatum umwandeln. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Hier finden Sie weitere Einzelheiten"^] .
+
+Sie verwalten Cloud Tiering BYOL-Lizenzen in der Konsole.  Sie können neue Lizenzen hinzufügen und vorhandene Lizenzen aktualisieren.link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Erfahren Sie, wie Sie Lizenzen verwalten."^]
+
+
+
+=== Cloud Tiering BYOL-Lizenzierung ab 2021
+
+Die neue *Cloud Tiering*-Lizenz wurde im August 2021 für Tiering-Konfigurationen eingeführt, die innerhalb der NetApp Konsole mithilfe des Cloud Tiering-Dienstes unterstützt werden.  Die NetApp Konsole unterstützt derzeit das Tiering für den folgenden Cloud-Speicher: Amazon S3, Azure Blob Storage, Google Cloud Storage, NetApp StorageGRID und S3-kompatibler Objektspeicher.
+
+Die FabricPool-Lizenz, die Sie möglicherweise in der Vergangenheit zum Tiering von On-Premises- ONTAP Daten in die Cloud verwendet haben, wird nur für ONTAP Bereitstellungen an Standorten ohne Internetzugang (auch als „Dark Sites“ bezeichnet) und für Tiering-Konfigurationen in IBM Cloud Object Storage beibehalten.  Wenn Sie diese Art der Konfiguration verwenden, installieren Sie mithilfe von System Manager oder der ONTAP CLI eine FabricPool -Lizenz auf jedem Cluster.
+
+
+TIP: Beachten Sie, dass für die Tiering-Funktion zu StorageGRID keine FabricPool oder Cloud Tiering-Lizenz erforderlich ist.
+
+Wenn Sie derzeit die FabricPool -Lizenzierung verwenden, sind Sie nicht betroffen, bis Ihre FabricPool -Lizenz ihr Ablaufdatum oder ihre maximale Kapazität erreicht.  Wenden Sie sich an NetApp , wenn Sie Ihre Lizenz aktualisieren müssen, oder auch schon früher, um sicherzustellen, dass Ihre Fähigkeit, Daten in die Cloud zu verschieben, nicht unterbrochen wird.
+
+* Wenn Sie eine Konfiguration verwenden, die in der Konsole unterstützt wird, werden Ihre FabricPool -Lizenzen in Cloud Tiering-Lizenzen umgewandelt und in der Konsole angezeigt.  Wenn diese anfänglichen Lizenzen ablaufen, müssen Sie die Cloud Tiering-Lizenzen aktualisieren.
+* Wenn Sie eine Konfiguration verwenden, die in der Konsole nicht unterstützt wird, verwenden Sie weiterhin eine FabricPool -Lizenz. https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html["Erfahren Sie, wie Sie mit System Manager Lizenzstufen erstellen."^] .
+
+
+Hier sind einige Dinge, die Sie über die beiden Lizenzen wissen müssen:
+
+[cols="50,50"]
+|===
+| Cloud Tiering-Lizenz | FabricPool -Lizenz 
+
+
+| Es handelt sich um eine Floating-Lizenz, die Sie für mehrere lokale ONTAP Cluster verwenden können. | Es handelt sich um eine Lizenz pro Cluster, die Sie für _jeden_ Cluster erwerben und lizenzieren. 
+
+
+| Es ist in der NetApp Konsole registriert. | Es wird mithilfe des System Managers oder der ONTAP CLI auf einzelne Cluster angewendet. 
+
+
+| Die Tiering-Konfiguration und -Verwaltung erfolgt über den Cloud Tiering-Dienst in der NetApp Konsole. | Die Tiering-Konfiguration und -Verwaltung erfolgt über System Manager oder die ONTAP CLI. 
+
+
+| Sobald die Staffelung konfiguriert ist, können Sie den Staffelungsdienst 30 Tage lang ohne Lizenz im Rahmen der kostenlosen Testversion nutzen. | Nach der Konfiguration können Sie die ersten 10 TB Daten kostenlos stufen. 
+|===
+
+
+=== Verwalten von Cloud Tiering-Lizenzen
+
+Wenn sich Ihre Lizenzlaufzeit dem Ablaufdatum nähert oder Ihre lizenzierte Kapazität das Limit erreicht, werden Sie sowohl im Cloud Tiering als auch in der Konsole benachrichtigt.
+
+Sie können vorhandene Lizenzen aktualisieren, den Lizenzstatus anzeigen und über die Konsole neue Lizenzen hinzufügen. https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Erfahren Sie mehr über die Verwaltung von Lizenzen"^] .
+
+
+
+== Wenden Sie Cloud Tiering-Lizenzen auf Cluster in speziellen Konfigurationen an
+
+ONTAP Cluster in den folgenden Konfigurationen können Cloud Tiering-Lizenzen verwenden, die Lizenz muss jedoch anders angewendet werden als bei Einzelknotenclustern, HA-konfigurierten Clustern, Clustern in Tiering Mirror-Konfigurationen und MetroCluster -Konfigurationen mit FabricPool Mirror:
+
+* Cluster, die auf IBM Cloud Object Storage gestaffelt sind
+* Cluster, die in „Dark Sites“ installiert sind
+
+
+
+
+=== Prozess für vorhandene Cluster mit einer FabricPool -Lizenz
+
+Wenn Sielink:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Entdecken Sie einen dieser speziellen Clustertypen in Cloud Tiering"] , Cloud Tiering erkennt die FabricPool Lizenz und fügt die Lizenz der Konsole hinzu.  Diese Cluster werden die Daten wie gewohnt weiter einstufen.  Wenn die FabricPool -Lizenz abläuft, müssen Sie eine Cloud Tiering-Lizenz erwerben.
+
+
+
+=== Prozess für neu erstellte Cluster
+
+Wenn Sie typische Cluster in Cloud Tiering entdecken, konfigurieren Sie das Tiering mithilfe der Cloud Tiering-Schnittstelle.  In diesen Fällen werden die folgenden Aktionen ausgeführt:
+
+. Die „übergeordnete“ Cloud-Tiering-Lizenz verfolgt die von allen Clustern für das Tiering verwendete Kapazität, um sicherzustellen, dass in der Lizenz genügend Kapazität vorhanden ist.  Die gesamte lizenzierte Kapazität und das Ablaufdatum werden in der Konsole angezeigt.
+. Auf jedem Cluster wird automatisch eine „untergeordnete“ Lizenz installiert, die mit der „übergeordneten“ Lizenz kommuniziert.
+
+
+
+NOTE: Die im System Manager oder in der ONTAP CLI für die „untergeordnete“ Lizenz angezeigte lizenzierte Kapazität und das Ablaufdatum entsprechen nicht den tatsächlichen Informationen. Machen Sie sich also keine Sorgen, wenn die Informationen nicht übereinstimmen.  Diese Werte werden intern von der Cloud Tiering-Software verwaltet.  Die tatsächlichen Informationen werden in der Konsole verfolgt.
+
+Für die beiden oben aufgeführten Konfigurationen müssen Sie das Tiering mit System Manager oder der ONTAP CLI konfigurieren (nicht über die Cloud Tiering-Schnittstelle).  In diesen Fällen müssen Sie die „untergeordnete“ Lizenz manuell über die Cloud Tiering-Schnittstelle auf diese Cluster übertragen.
+
+Beachten Sie, dass Sie eine Lizenz mit ausreichender Kapazität für die Datenverteilung an beiden Standorten erwerben müssen, da die Daten bei Tiering Mirror-Konfigurationen an zwei verschiedenen Objektspeicherorten verteilt werden.
+
+.Schritte
+. Installieren und konfigurieren Sie Ihre ONTAP Cluster mit System Manager oder der ONTAP CLI.
++
+Konfigurieren Sie an dieser Stelle kein Tiering.
+
+. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Erwerben Sie eine Cloud Tiering-Lizenz"]für die für den bzw. die neuen Cluster benötigte Kapazität.
+. In der Konsole<<licenses,Fügen Sie die Lizenz zur digitalen Geldbörse hinzu>> [Lizenz hinzufügen].
+. Beim Cloud Tieringlink:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Entdecken Sie die neuen Cluster"] .
+. Wählen Sie auf der Seite „Cluster“image:screenshot_horizontal_more_button.gif["Symbol „Mehr“"] für den Cluster und wählen Sie *Lizenz bereitstellen*.
++
+image:screenshot_tiering_deploy_license.png["Ein Screenshot, der zeigt, wie eine Tiering-Lizenz in einem ONTAP Cluster bereitgestellt wird."]
+
+. Wählen Sie im Dialogfeld „Lizenz bereitstellen“ die Option „Bereitstellen“ aus.
++
+Die untergeordnete Lizenz wird im ONTAP Cluster bereitgestellt.
+
+. Kehren Sie zum System Manager oder zur ONTAP CLI zurück und richten Sie Ihre Tiering-Konfiguration ein.
++
+https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html["FabricPool Mirror-Konfigurationsinformationen"]
+
++
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["FabricPool MetroCluster -Konfigurationsinformationen"]
+
++
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html["Informationen zum Tiering für IBM Cloud Object Storage"]
+
+

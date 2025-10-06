@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: reference-azure-support.html 
+keywords: microsoft azure, azure, hot, access tier, cold, regions, cloud tiering, tier, bluexp 
+summary: NetApp Cloud Tiering unterstützt zwei Zugriffsebenen und die meisten Regionen. 
+---
+= Unterstützte Azure Blob-Zugriffsebenen und -Regionen für NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering unterstützt zwei Zugriffsebenen und die meisten Regionen.
+
+
+
+== Unterstützte Azure Blob-Zugriffsebenen
+
+Wenn Sie das Daten-Tiering von Ihren lokalen ONTAP -Systemen zu Azure einrichten, verwendet Cloud Tiering automatisch die _Hot_-Zugriffsebene für Ihre inaktiven Daten.  Cloud Tiering kann eine Lebenszyklusregel anwenden, sodass die Daten nach einer bestimmten Anzahl von Tagen von der Zugriffsebene „Hot“ in die Zugriffsebene „Cool“ wechseln.
+
+Wenn Sie die Zugriffsebene „Cool“ nicht auswählen, verbleiben die Daten in der Zugriffsebene „Hot“ und es werden keine Regeln angewendet.
+
+Wenn Sie eine Cloud Tiering-Lebenszyklusregel konfigurieren, dürfen Sie beim Einrichten des Containers in Ihrem Azure-Konto keine Lebenszyklusregeln konfigurieren.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Informationen zu Azure Blob-Zugriffsebenen"^] .
+
+
+
+== Unterstützte Azure-Regionen
+
+Cloud Tiering wird in allen Azure-Regionen unterstützt, mit Ausnahme von China, wo Microsoft Azure von 21Vianet betrieben wird.

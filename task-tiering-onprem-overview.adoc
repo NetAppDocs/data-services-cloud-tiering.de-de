@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-overview.html 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+summary: Cloud Tiering bietet eine aggregierte Ansicht der Daten-Tierings von jedem Ihrer lokalen Cluster.  Diese Übersicht bietet ein klares Bild Ihrer Umgebung und ermöglicht Ihnen, die richtigen Maßnahmen zu ergreifen. 
+---
+= Verschaffen Sie sich einen Überblick über das Daten-Tiering Ihrer Cluster in NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering bietet eine aggregierte Ansicht der Daten-Tierings von jedem Ihrer lokalen Cluster.  Diese Übersicht bietet ein klares Bild Ihrer Umgebung und ermöglicht Ihnen, die richtigen Maßnahmen zu ergreifen.
+
+Wählen Sie *Cloud Tiering > On-Premises Dashboard*, um die folgenden Details zu Ihrer Umgebung anzuzeigen.
+
+image:screenshot_tiering_onprem_dashboard.png["Ein Screenshot der On-Premises-Dashboard-Seite."]
+
+Entdeckte Cluster:: Die Anzahl der lokalen Cluster, die Cloud Tiering erkannt hat.  Das Diagramm bietet einen Überblick über den Tiering-Status dieser Cluster.
++
+--
+* Hohes Tiering – Cluster, die über 20 % ihrer kalten Daten tieren
+* Niedrige Tiering-Cluster, die weniger als 20 % ihrer kalten Daten tieren
+* Kein Tiering – Cluster, die kein Tiering für Daten durchführen
+* Nicht berechtigt – Cluster, die kein Daten-Tiering unterstützen
+
+
+--
+Datenübersicht:: Die Datenmenge, die von allen erkannten Clustern verwendet wird. Das Diagramm zeigt, wie viele Daten für diese Cluster abgestuft werden.
++
+--
+* Abgestufte Daten – Gesamtheit der kalten Daten, die in die Cloud verschoben werden
+* Kalte Daten – Gesamte kalte Daten, die nicht abgestuft werden
+* Heiße Daten – Gesamtzahl der aktiven heißen Daten, die verwendet werden
+* Nicht berechtigt – Gesamtheit der Daten, die nicht gestaffelt werden, weil der Cluster oder das Volume keine Datenstaffelung unterstützt.
+
+
+--
+Übersicht über die Staffelung:: Die Datenmenge, die derzeit gestaffelt wird, und die Menge kalter Daten, die potenziell gestaffelt werden könnten.
+Richtlinien:: Die Häufigkeit, mit der jede Tiering-Richtlinie auf ein Volume angewendet wurde.
+Marketplace-Abonnements:: Die Anzahl der Cluster, die mit jedem Typ von Marketplace-Abonnement verknüpft sind, und eine Angabe zu Ihrem Abonnementstatus.
+

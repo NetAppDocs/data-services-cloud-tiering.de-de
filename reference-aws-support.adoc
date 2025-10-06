@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: reference-aws-support.html 
+keywords: aws, amazon, s3, support, regions, storage classes, cloud tiering, tiering, bluexp, netapp 
+summary: NetApp Cloud Tiering unterstützt mehrere S3-Speicherklassen und die meisten Regionen. 
+---
+= Unterstützte S3-Speicherklassen und -Regionen für NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering unterstützt mehrere S3-Speicherklassen und die meisten Regionen.
+
+
+
+== Unterstützte S3-Speicherklassen
+
+Wenn Sie die Datenschichtung von Ihren lokalen ONTAP -Systemen zu AWS einrichten, verwendet Cloud Tiering automatisch die Speicherklasse _Standard_ für Ihre inaktiven Daten.  Cloud Tiering kann eine Lebenszyklusregel anwenden, sodass die Daten nach einer bestimmten Anzahl von Tagen von der Speicherklasse _Standard_ in eine andere Speicherklasse wechseln.  Sie können aus folgenden Speicherklassen wählen:
+
+* Standard – Seltener Zugriff (S3 Standard-IA)
+* Eine Zone – Seltener Zugriff (S3 One Zone – IA)
+* Intelligent-Tiering (S3 Intelligent-Tiering)
+* Sofortiger Gletscherabruf
+
+
+Wenn Sie keine andere Speicherklasse auswählen, verbleiben die Daten in der Speicherklasse _Standard_ und es werden keine Regeln angewendet.
+
+Wenn Sie eine Cloud Tiering-Lebenszyklusregel konfigurieren, dürfen Sie beim Einrichten des Buckets in Ihrem AWS-Konto keine Lebenszyklusregeln konfigurieren.
+
+https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherklassen"^] .
+
+
+
+== Unterstützte AWS-Regionen
+
+Cloud Tiering unterstützt die folgenden AWS-Regionen.
+
+
+
+=== Asien-Pazifik
+
+* Mumbai
+* Seoul
+* Singapur
+* Sydney
+* Tokio
+
+
+
+
+=== Europa
+
+* Frankfurt
+* Irland
+* London
+* Paris
+* Stockholm
+
+
+
+
+=== Nordamerika
+
+* Kanada, Zentral
+* USA Ost (Nord-Virginia)
+* USA Ost (Ohio)
+* USA West (Nordkalifornien)
+* USA West (Oregon)
+
+
+
+
+=== Südamerika
+
+* São Paulo
+

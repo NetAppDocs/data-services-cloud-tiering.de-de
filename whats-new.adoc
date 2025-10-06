@@ -1,0 +1,167 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, tiering' 
+summary: Erfahren Sie, was es Neues bei NetApp Cloud Tiering gibt. 
+---
+= Was ist neu bei NetApp Cloud Tiering?
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erfahren Sie, was es Neues bei NetApp Cloud Tiering gibt.
+
+
+
+== 06. Oktober 2025
+
+
+
+=== BlueXP tiering heißt jetzt NetApp Cloud Tiering
+
+BlueXP tiering wurde in NetApp Cloud Tiering umbenannt.
+
+
+
+=== BlueXP heißt jetzt NetApp Console
+
+Die NetApp Console basiert auf der verbesserten und neu strukturierten BlueXP -Grundlage und ermöglicht die zentrale Verwaltung von NetApp Storage und NetApp Data Services in On-Premises- und Cloud-Umgebungen auf Unternehmensniveau. Sie liefert Einblicke in Echtzeit, schnellere Workflows und eine vereinfachte Administration mit hoher Sicherheit und Konformität.
+
+Einzelheiten zu den Änderungen finden Sie imlink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Versionshinweise zur NetApp Konsole"] .
+
+
+
+== 09. August 2023
+
+
+
+=== Verwenden Sie ein benutzerdefiniertes Präfix für den Bucket-Namen
+
+In der Vergangenheit mussten Sie beim Definieren des Bucket-Namens das Standardpräfix „fabric-pool“ verwenden, z. B. _fabric-pool-bucket1_. Jetzt können Sie beim Benennen Ihres Buckets ein benutzerdefiniertes Präfix verwenden. Diese Funktion ist nur beim Tiering von Daten auf Amazon S3 verfügbar. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#prepare-your-aws-environment["Mehr erfahren"] .
+
+
+
+=== Suche nach einem Cluster über alle BlueXP Connectors
+
+Wenn Sie mehrere Connectors verwenden, um alle Speichersysteme in Ihrer Umgebung zu verwalten, befinden sich einige Cluster, auf denen Sie Tiering implementieren möchten, möglicherweise in unterschiedlichen Connectors. Wenn Sie nicht sicher sind, welcher Connector einen bestimmten Cluster verwaltet, können Sie mithilfe von Cloud Tiering über alle Connectors hinweg suchen. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors["Mehr erfahren"] .
+
+
+
+== 04. Juli 2023
+
+
+
+=== Passen Sie die Bandbreite an, um inaktive Daten zu übertragen
+
+Wenn Sie Cloud Tiering aktivieren, kann ONTAP eine unbegrenzte Netzwerkbandbreite nutzen, um die inaktiven Daten von Volumes im Cluster in den Objektspeicher zu übertragen.  Wenn Sie feststellen, dass sich die Datenverkehrsstaffelung auf die normale Arbeitslast der Benutzer auswirkt, können Sie die Bandbreite drosseln, die während der Übertragung genutzt werden kann. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage["Mehr erfahren"] .
+
+
+
+=== Im Benachrichtigungscenter angezeigtes Tiering-Ereignis
+
+Das Tiering-Ereignis „Tieren Sie zusätzliche Daten vom Cluster <Name> in den Objektspeicher, um Ihre Speichereffizienz zu erhöhen“ wird jetzt als Benachrichtigung angezeigt, wenn ein Cluster weniger als 20 % seiner kalten Daten tieret – einschließlich Clustern, die keine Daten tieren.
+
+Diese Benachrichtigung ist eine „Empfehlung“, die Ihnen dabei helfen soll, Ihre Systeme effizienter zu gestalten und Speicherkosten zu sparen.  Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
+
+
+
+== 03. April 2023
+
+
+
+=== Die Registerkarte „Lizenzierung“ wurde entfernt
+
+Die Registerkarte „Lizenzierung“ wurde aus der Cloud Tiering-Schnittstelle entfernt.  Auf alle Lizenzen für Pay-as-you-go-Abonnements (PAYGO) kann jetzt über das Cloud Tiering On-Premises-Dashboard zugegriffen werden.  Auf dieser Seite gibt es auch einen Link zur BlueXP digital wallet, sodass Sie alle Bring-Your-Own-Lizenzen (BYOL) für Cloud Tiering anzeigen und verwalten können.
+
+
+
+=== Die Registerkarten für die Einstufung wurden umbenannt und aktualisiert.
+
+Die Registerkarte „Cluster-Dashboard“ wurde in „Cluster“ umbenannt und die Registerkarte „On-Prem-Übersicht“ wurde in „On-Premises-Dashboard“ umbenannt.  Auf diesen Seiten finden Sie einige Informationen, die Ihnen bei der Beurteilung helfen, ob Sie Ihren Speicherplatz mit einer zusätzlichen Tiering-Konfiguration optimieren können.
+
+
+
+== 05. März 2023
+
+
+
+=== Generieren eines Tiering-Berichts für Volumes
+
+Sie können einen Bericht von der Seite „Tier Volumes“ herunterladen, um den Tiering-Status aller Volumes auf den von Ihnen verwalteten Clustern zu überprüfen.  BlueXP Tiering generiert eine CSV-Datei, die Sie überprüfen und bei Bedarf an andere Personen in Ihrem Unternehmen senden können. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes["So laden Sie den Tiering-Bericht herunter"] .
+
+
+
+== 06. Dezember 2022
+
+
+
+=== Änderungen am ausgehenden Internetzugriffsendpunkt des Connectors
+
+Aufgrund einer Änderung im Cloud Tiering müssen Sie die folgenden Connector-Endpunkte ändern, damit der Cloud Tiering-Vorgang erfolgreich ist:
+
+[cols="50,50"]
+|===
+| Alter Endpunkt | Neuer Endpunkt 
+
+
+| \https://cloudmanager.cloud.netapp.com | \https://api.bluexp.netapp.com 
+
+
+| \https://*.cloudmanager.cloud.netapp.com | \https://*.api.bluexp.netapp.com 
+|===
+Sehen Sie sich die vollständige Liste der Endpunkte für Ihre https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#outbound-internet-access["AWS"^] , https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#outbound-internet-access["Google Cloud"^] , oder https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#outbound-internet-access["Azurblau"^] Cloud-Umgebung.
+
+
+
+== 06. November 2022
+
+
+
+=== Per Drag & Drop können Sie die Einstufung auf zusätzliche Ziele aktivieren.
+
+Wenn das Azure Blob-, Google Cloud Storage- oder StorageGRID -Tiering-Ziel als Arbeitsumgebung auf dem Canvas vorhanden ist, können Sie Ihre lokale ONTAP Arbeitsumgebung auf das Ziel ziehen, um den Tiering-Setup-Assistenten zu starten.
+
+
+
+== 19. September 2022
+
+
+
+=== Konfigurieren Sie AWS PrivateLink beim Tiering auf Amazon S3
+
+In früheren Versionen war es sehr zeitaufwändig, diese sichere Möglichkeit bereitzustellen, Ihren Cluster über einen VPC-Endpunkt mit einem S3-Bucket zu verbinden.  Jetzt können Sie die erforderlichen Schritte ausführen, um https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface["Konfigurieren Sie Ihr System für eine private Verbindung mithilfe einer VPC-Endpunktschnittstelle"] , und dann können Sie PrivateLink während des Tiering-Setup-Assistenten auf der Netzwerkseite auswählen.
+
+https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html["Überprüfen Sie die Anforderungen und Schritte zum Tiering inaktiver Daten auf Amazon S3"] .
+
+
+
+=== Aktivieren der Tiering-Funktion für Amazon S3 per Drag & Drop
+
+Wenn das Amazon S3-Tiering-Ziel als Arbeitsumgebung auf dem Canvas vorhanden ist, können Sie Ihre lokale ONTAP Arbeitsumgebung auf das Ziel ziehen, um den Tiering-Setup-Assistenten zu starten.
+
+
+
+=== Auswählen des Tiering-Verhaltens beim Entfernen des gespiegelten Objektspeichers
+
+Wenn Sie den gespiegelten Objektspeicher aus einer MetroCluster -Konfiguration entfernen, werden Sie gefragt, ob Sie auch den primären Objektspeicher entfernen möchten.  Sie können wählen, ob der primäre Objektspeicher mit dem Aggregat verbunden bleiben oder entfernt werden soll.
+
+
+
+== 03. August 2022
+
+
+
+=== Konfigurieren Sie zusätzliche Objektspeicher für andere Aggregate
+
+Der Cloud Tiering-Benutzeroberfläche wurde ein neuer Satz Seiten für die Objektspeicherkonfiguration hinzugefügt.  Sie können neue Objektspeicher hinzufügen, mehrere Objektspeicher mit einem Aggregat für FabricPool Mirroring verbinden, die primären und gespiegelten Objektspeicher austauschen, Objektspeicherverbindungen zu Aggregaten löschen und vieles mehr. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-object-storage.html["Erfahren Sie mehr über die neue Objektspeicherfunktionalität."]
+
+
+
+=== Lizenzunterstützung für MetroCluster -Konfigurationen
+
+Cloud-Tiering-Lizenzen können jetzt mit Ihren Clustern geteilt werden, die sich in MetroCluster -Konfigurationen befinden.  Sie müssen für diese Szenarien nicht mehr die veralteten FabricPool Lizenzen verwenden.  Dies erleichtert die Verwendung der „Floating“-Cloud-Tiering-Lizenzen auf mehreren Ihrer Cluster. https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations["Informieren Sie sich über die Lizenzierung und Konfiguration dieser Clustertypen."]

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-test.html 
+keywords: throughput, latency, tiering performance, cloud performance test, tiering test, object storage performance 
+summary: Führen Sie einen Cloud-Leistungstest durch, um die Netzwerklatenz und Durchsatzleistung von einem ONTAP Cluster zu einem Objektspeicher vor und nach der Einrichtung der Datenschichtung zu messen. 
+---
+= Messen Sie die Netzwerklatenz und Durchsatzleistung in NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Führen Sie einen Cloud-Leistungstest durch, um die Netzwerklatenz und Durchsatzleistung von einem ONTAP Cluster zu einem Objektspeicher vor und nach der Einrichtung des Daten-Tierings in NetApp Cloud Tiering zu messen.  Der Test identifiziert auch alle aufgetretenen Fehler.
+
+Hier sind Beispiele für Leistungsergebnisse:
+
+image:screenshot_cloud_performance_test.png["Ein Screenshot der Cluster-Leistungsergebnisse für einen Cloud-Leistungstest."]
+
+.Bevor Sie beginnen
+Diese Prüfung sollte am besten durchgeführt werden, wenn die CPU-Auslastung des Clusters unter 50 % liegt.
+
+.Schritte für einen Cluster, der nicht für Tiering eingerichtet wurde
+. Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
+. Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Cloud-Leistungstest* aus.
+. Überprüfen Sie die Details und wählen Sie *Weiter*.
+. Überprüfen Sie die Details und wählen Sie *Weiter*.
+. Folgen Sie den Anweisungen, um die erforderlichen Informationen bereitzustellen.
++
+Die Informationen, die Sie angeben müssen, sind dieselben, als würden Sie Tiering auf dem Cluster einrichten.
+
+. Fahren Sie optional mit dem Tier Volumes-Assistenten fort, um die Einrichtung abzuschließen.
+
+
+.Schritte für einen Cluster, der für Tiering eingerichtet wurde
+. Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
+. Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Cloud-Leistungstest* aus.
+. Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Cloud-Leistungstest* aus.
+. Wählen Sie einen Knoten aus der Dropdownliste aus.
+. Sehen Sie sich die Ergebnisse an oder überprüfen Sie die Leistung erneut.
+

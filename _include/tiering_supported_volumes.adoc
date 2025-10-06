@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+Unterstützte Volumes und Aggregate:: Die Gesamtzahl der Volumes, die Cloud Tiering in Tiering einteilen kann, ist möglicherweise geringer als die Anzahl der Volumes auf Ihrem ONTAP System.  Das liegt daran, dass Volumes aus einigen Aggregaten nicht gestaffelt werden können.  Weitere Informationen finden Sie in der ONTAP -Dokumentation. https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["Funktionen oder Features, die von FabricPool nicht unterstützt werden"^] .
+
