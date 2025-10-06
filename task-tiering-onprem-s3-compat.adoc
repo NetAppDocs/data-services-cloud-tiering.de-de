@@ -36,7 +36,7 @@ Beginnen Sie schnell, indem Sie diese Schritte befolgen, oder scrollen Sie nach 
 Sie benötigen Folgendes:
 
 [role="quick-margin-list"]
-* Ein lokaler ONTAP -Quellcluster mit ONTAP 9.8 oder höher, den Sie der NetApp Konsole hinzugefügt haben, und eine Verbindung über einen benutzerdefinierten Port zum S3-kompatiblen Zielobjektspeicher. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+* Ein lokaler ONTAP -Quellcluster mit ONTAP 9.8 oder höher, den Sie der NetApp Console hinzugefügt haben, und eine Verbindung über einen benutzerdefinierten Port zum S3-kompatiblen Zielobjektspeicher. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
 * Der FQDN, der Zugriffsschlüssel und der geheime Schlüssel für den Objektspeicherserver, damit der ONTAP Cluster auf den Bucket zugreifen kann.
 * Ein bei Ihnen vor Ort installierter Konsolenagent.
 * Netzwerk für den Agenten, der eine ausgehende HTTPS-Verbindung zum Quell- ONTAP Cluster, zum S3-kompatiblen Objektspeicher und zum Cloud Tiering-Dienst ermöglicht.
@@ -52,7 +52,7 @@ Bezahlen Sie für Cloud Tiering über ein Pay-as-you-go-Abonnement Ihres Cloud-A
 
 [role="quick-margin-list"]
 * Um das PAYGO-Angebot von der https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplace"^] , https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure Marketplace"^] , oder https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP Marketplace"^] , wählen Sie *Abonnieren* und folgen Sie den Anweisungen.
-* Um mit einer Cloud Tiering BYOL-Lizenz zu bezahlen, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[kontaktieren Sie uns, wenn Sie eine kaufen müssen], und dannlink:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Fügen Sie es der NetApp Konsole hinzu"^] . .
+* Um mit einer Cloud Tiering BYOL-Lizenz zu bezahlen, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[kontaktieren Sie uns, wenn Sie eine kaufen müssen], und dannlink:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Fügen Sie es der NetApp Console hinzu"^] . .
 
 
 
@@ -81,7 +81,7 @@ Cluster-Netzwerkanforderungen::
 --
 * Der ONTAP Cluster initiiert über einen benutzerdefinierten Port eine HTTPS-Verbindung zum S3-kompatiblen Objektspeicher (der Port kann während der Tiering-Einrichtung konfiguriert werden).
 +
-Das Quell- ONTAP -System liest und schreibt Daten in den und aus dem Objektspeicher.  Der Objektspeicher wird nie initiiert, er reagiert nur.
+Das ONTAP Quellsystem liest und schreibt Daten in den und aus dem Objektspeicher.  Der Objektspeicher wird nie initiiert, er reagiert nur.
 
 * Es ist eine eingehende Verbindung vom Agenten erforderlich, der sich in Ihrem Unternehmen befinden muss.
 +
@@ -106,7 +106,7 @@ TIP: Cloud Tiering unterstützt sowohl FlexVol als auch FlexGroup -Volumes.
 
 Sie müssen Ihr lokales ONTAP -System zur Konsole hinzufügen, bevor Sie mit der Einstufung kalter Daten beginnen können.
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^].
 
 
 
@@ -151,7 +151,7 @@ Stellen Sie sicher, dass der Agent über die erforderlichen Netzwerkverbindungen
 .Schritte
 . Stellen Sie sicher, dass das Netzwerk, in dem der Agent installiert ist, die folgenden Verbindungen ermöglicht:
 +
-** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["siehe die Liste der Endpunkte"^] )
+** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["siehe Liste der Endpunkte"^] )
 ** Eine HTTPS-Verbindung über Port 443 zu S3-kompatiblem Objektspeicher
 ** Eine HTTPS-Verbindung über Port 443 zu Ihrem ONTAP Cluster-Management-LIF
 
@@ -165,7 +165,7 @@ Stellen Sie sicher, dass der Agent über die erforderlichen Netzwerkverbindungen
 Nachdem Sie Ihre Umgebung vorbereitet haben, beginnen Sie mit der Tiering-Verteilung inaktiver Daten aus Ihrem ersten Cluster.
 
 .Was du brauchst
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein lokales System, das zur NetApp Konsole hinzugefügt wurde"^] .
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein lokales System, das zur NetApp Console hinzugefügt wurde"^].
 * Der FQDN des S3-kompatiblen Objektspeicherservers und der Port, der für die HTTPS-Kommunikation verwendet wird.
 * Ein Zugriffsschlüssel und ein geheimer Schlüssel mit den erforderlichen S3-Berechtigungen.
 
@@ -207,7 +207,7 @@ image:screenshot_tiering_initial_volumes.png["Ein Screenshot, der zeigt, wie Sie
 
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].
 
 +
 image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
@@ -215,7 +215,7 @@ image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die ko
 
 
 .Wie geht es weiter?
-link:task-licensing-cloud-tiering.html["Abonnieren Sie unbedingt den Cloud Tiering-Dienst"] .
+link:task-licensing-cloud-tiering.html["Abonnieren Sie unbedingt den Cloud Tiering-Dienst"].
 
 Sie können Informationen zu den aktiven und inaktiven Daten auf dem Cluster überprüfen. link:task-managing-tiering.html["Erfahren Sie mehr über die Verwaltung Ihrer Tiering-Einstellungen"] .
 

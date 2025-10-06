@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-monitor-tiering-alerts.html 
 keywords: tiering, status, monitor, alert, notification, cloud tiering, bluexp 
-summary: Sie können den Status von Tiering-Warnmeldungen im Benachrichtigungscenter der NetApp Konsole anzeigen. 
+summary: Sie können den Status von Tiering-Warnmeldungen im Benachrichtigungscenter der NetApp Console anzeigen. 
 ---
 = Überwachen Sie den Status der Tiering-Warnungen von NetApp Cloud Tiering
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Sie können den Status von Tiering-Warnmeldungen im Benachrichtigungsce
 
 
 [role="lead"]
-Sie können den Status der Tiering-Warnmeldungen von NetApp Cloud Tiering im Benachrichtigungscenter der NetApp Konsole anzeigen.
+Sie können den Status der Tiering-Warnmeldungen von NetApp Cloud Tiering im Benachrichtigungscenter der NetApp Console anzeigen.
 
 Das Benachrichtigungscenter verfolgt den Fortschritt von Tiering-Vorfällen, sodass Sie überprüfen können, ob sie gelöst wurden oder nicht.  Sie können die Benachrichtigungen anzeigen, indem Sie das (image:icon_bell.png["Benachrichtigungsglocke"] ) in der Menüleiste der Konsole.
 
@@ -22,8 +22,8 @@ Derzeit gibt es ein Tiering-Ereignis, das als Benachrichtigung angezeigt wird:
 
 Um Speicherplatz zu sparen, werden zusätzliche Daten vom Cluster <Name> in den Objektspeicher verschoben.
 
-Diese Benachrichtigung ist eine „Empfehlung“ zur Verbesserung der Systemleistung und zur Reduzierung der Speicherkosten.  Es zeigt an, dass ein Cluster weniger als 20 % seiner kalten Daten in Tiering-Phase bringt – einschließlich Clustern, die keine Daten in Tiering-Phase bringen.  Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
+Diese Benachrichtigung ist eine „Empfehlung“ zur Verbesserung der Systemleistung und zur Reduzierung der Speicherkosten.  Es zeigt an, dass ein Cluster weniger als 20 % seiner kalten Daten in Tiering-Phasen einordnet – einschließlich Clustern, die keine Daten in Tiering-Phasen einordnen.  Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
 
-Die NetApp Konsole sendet für diese Benachrichtigung keine E-Mail.
+Die NetApp Console sendet für diese Benachrichtigung keine E-Mail.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über das Benachrichtigungscenter"^] .
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über das Benachrichtigungscenter"^].

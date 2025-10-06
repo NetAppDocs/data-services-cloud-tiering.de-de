@@ -71,7 +71,7 @@ image:screenshot_tiering_tier_volumes.png["Ein Screenshot, der zeigt, wie Sie ei
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].
 
 +
 image:screenshot_tiering_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
@@ -94,7 +94,7 @@ Durch das Ändern der Tiering-Richtlinie für ein Volume wird die Art und Weise 
 . Klicken Sie auf die Zeile für ein Volumen, wählen Sie eine Tiering-Richtlinie aus, passen Sie optional die Kühltage an und wählen Sie *Übernehmen*.
 . Klicken Sie auf die Zeile für ein Volumen, wählen Sie eine Tiering-Richtlinie aus, passen Sie optional die Kühltage an und wählen Sie *Übernehmen*.
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].
 
 +
 image:screenshot_tiering_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
@@ -218,7 +218,7 @@ image:screenshot_tiering_modify_aggregate.png["Ein Screenshot, der einen Schiebe
 
 == Beheben Sie den Betriebszustand
 
-Wenn Fehler auftreten, zeigt Cloud Tiering auf dem Cluster-Dashboard den Betriebszustandsstatus „Fehlgeschlagen“ an.  Der Zustand spiegelt den Status des ONTAP -Systems und der NetApp Konsole wider.
+Wenn Fehler auftreten, zeigt Cloud Tiering auf dem Cluster-Dashboard den Betriebszustandsstatus „Fehlgeschlagen“ an.  Der Zustand spiegelt den Status des ONTAP -Systems und der NetApp Console wider.
 
 .Schritte
 . Identifizieren Sie alle Cluster, deren Betriebszustand „Fehlgeschlagen“ lautet.
@@ -284,5 +284,5 @@ image:screenshot_tiering_search for_cluster.png["Ein Screenshot, der zeigt, wie 
 +
 Cloud Tiering zeigt den Namen des Agenten an, wenn es den Cluster finden kann.
 
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Wechseln Sie zum Agenten und konfigurieren Sie das Tiering für den Cluster"^] .
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Wechseln Sie zum Agenten und konfigurieren Sie das Tiering für den Cluster"^].
 

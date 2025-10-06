@@ -31,7 +31,7 @@ Wenn Sie keine andere Speicherklasse auswählen, verbleiben die Daten in der Spe
 
 Wenn Sie eine Cloud Tiering-Lebenszyklusregel konfigurieren, dürfen Sie beim Einrichten des Buckets in Ihrem Google-Konto keine Lebenszyklusregeln konfigurieren.
 
-https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google Cloud Storage-Klassen"^] .
+https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google Cloud Storage-Klassen"^].
 
 
 

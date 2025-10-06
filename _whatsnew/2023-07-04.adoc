@@ -6,7 +6,7 @@
 
 === Passen Sie die Bandbreite an, um inaktive Daten zu übertragen
 
-Wenn Sie Cloud Tiering aktivieren, kann ONTAP eine unbegrenzte Netzwerkbandbreite nutzen, um die inaktiven Daten von Volumes im Cluster in den Objektspeicher zu übertragen.  Wenn Sie feststellen, dass sich die Datenverkehrsstaffelung auf die normale Arbeitslast der Benutzer auswirkt, können Sie die Bandbreite drosseln, die während der Übertragung genutzt werden kann. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage["Mehr erfahren"] .
+Wenn Sie Cloud Tiering aktivieren, kann ONTAP eine unbegrenzte Netzwerkbandbreite nutzen, um die inaktiven Daten von Volumes im Cluster in den Objektspeicher zu übertragen. Wenn Sie feststellen, dass sich die Datenverkehrsstaffelung auf die normale Arbeitslast der Benutzer auswirkt, können Sie die Bandbreite drosseln, die während der Übertragung genutzt werden kann. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage["Mehr erfahren"] .
 
 
 
@@ -14,4 +14,4 @@ Wenn Sie Cloud Tiering aktivieren, kann ONTAP eine unbegrenzte Netzwerkbandbreit
 
 Das Tiering-Ereignis „Tieren Sie zusätzliche Daten vom Cluster <Name> in den Objektspeicher, um Ihre Speichereffizienz zu erhöhen“ wird jetzt als Benachrichtigung angezeigt, wenn ein Cluster weniger als 20 % seiner kalten Daten tieret – einschließlich Clustern, die keine Daten tieren.
 
-Diese Benachrichtigung ist eine „Empfehlung“, die Ihnen dabei helfen soll, Ihre Systeme effizienter zu gestalten und Speicherkosten zu sparen.  Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
+Diese Benachrichtigung ist eine „Empfehlung“, die Ihnen dabei helfen soll, Ihre Systeme effizienter zu gestalten und Speicherkosten zu sparen. Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.

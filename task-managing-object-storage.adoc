@@ -130,7 +130,7 @@ image:screenshot_tiering_advanced_setup_button.png["Ein Screenshot, der die Scha
 +
 image:screenshot_tiering_mirror_swap.png["Ein Screenshot, der die Option „Ziel austauschen“ für ein Aggregat zeigt."]
 
-. Bestätigen Sie die Aktion im Dialogfeld, und die primären und gespiegelten Objektspeicher werden vertauscht.
+. Bestätigen Sie die Aktion im Dialogfeld, und die Speicher der primären und gespiegelten Objekte werden vertauscht.
 
 
 

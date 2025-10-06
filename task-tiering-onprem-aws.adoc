@@ -38,7 +38,7 @@ Wenn Sie den Konsolenagenten bereits in Ihrem AWS VPC oder vor Ort bereitgestell
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]Vorbereiten Ihres lokalen ONTAP Clusters
 [role="quick-margin-para"]
-Ermitteln Sie Ihren ONTAP Cluster in der NetApp Konsole, überprüfen Sie, ob der Cluster die Mindestanforderungen erfüllt, und passen Sie die Netzwerkeinstellungen an, damit der Cluster eine Verbindung zu AWS S3 herstellen kann.
+Ermitteln Sie Ihren ONTAP Cluster in der NetApp Console, überprüfen Sie, ob der Cluster die Mindestanforderungen erfüllt, und passen Sie die Netzwerkeinstellungen an, damit der Cluster eine Verbindung zu AWS S3 herstellen kann.
 
 [role="quick-margin-para"]
 <<Bereiten Sie Ihren ONTAP Cluster vor,Erfahren Sie, wie Sie Ihren lokalen ONTAP Cluster vorbereiten.>>
@@ -63,7 +63,7 @@ Nach Ablauf Ihrer kostenlosen Testversion bezahlen Sie für Cloud Tiering über 
 
 [role="quick-margin-list"]
 * Um sich über den AWS Marketplace anzumelden, https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["zum Marketplace-Angebot"^] , wählen Sie *Abonnieren* und folgen Sie dann den Anweisungen.
-* Um mit einer Cloud Tiering BYOL-Lizenz zu bezahlen, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[kontaktieren Sie uns, wenn Sie eine kaufen müssen], und dannlink:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Fügen Sie es der NetApp Konsole hinzu"] .
+* Um mit einer Cloud Tiering BYOL-Lizenz zu bezahlen, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[kontaktieren Sie uns, wenn Sie eine kaufen müssen], und dannlink:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Fügen Sie es der NetApp Console hinzu"] .
 
 
 
@@ -91,7 +91,7 @@ NOTE: Die Kommunikation zwischen einem Agenten und S3 dient nur der Einrichtung 
 
 == Vorbereiten Ihres Konsolenagenten
 
-Der Agent aktiviert Tiering-Funktionen über die NetApp Konsole.  Zum Tiering Ihrer inaktiven ONTAP Daten ist ein Agent erforderlich.
+Der Agent aktiviert Tiering-Funktionen über die NetApp Console.  Zum Tiering Ihrer inaktiven ONTAP Daten ist ein Agent erforderlich.
 
 
 
@@ -110,7 +110,7 @@ Wenn Sie bereits einen Agenten in Ihrem AWS VPC oder vor Ort bereitgestellt habe
 
 * Stellen Sie sicher, dass das Netzwerk, in dem der Agent installiert ist, die folgenden Verbindungen ermöglicht:
 +
-** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst und zu Ihrem S3-Objektspeicher(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["siehe die Liste der Endpunkte"^] )
+** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst und zu Ihrem S3-Objektspeicher(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["siehe Liste der Endpunkte"^] )
 ** Eine HTTPS-Verbindung über Port 443 zu Ihrem ONTAP Cluster-Management-LIF
 
 
@@ -136,7 +136,7 @@ Unterstützte ONTAP -Plattformen::
 
 
 --
-Unterstützte ONTAP -Versionen::
+Unterstützte ONTAP-Versionen::
 +
 --
 * ONTAP 9.2 oder höher
@@ -178,11 +178,11 @@ Alle Intercluster-LIFs innerhalb des IPspace müssen Zugriff auf den Objektspeic
 
 
 
-=== Entdecken Sie Ihren ONTAP Cluster in der NetApp Konsole
+=== Entdecken Sie Ihren ONTAP Cluster in der NetApp Console
 
-Sie müssen Ihren lokalen ONTAP Cluster in der NetApp Konsole ermitteln, bevor Sie mit der Tiering-Verteilung kalter Daten in den Objektspeicher beginnen können.  Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen.
+Sie müssen Ihren lokalen ONTAP Cluster in der NetApp Console ermitteln, bevor Sie mit der Tiering-Verteilung kalter Daten in den Objektspeicher beginnen können.  Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen.
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^].
 
 
 
@@ -190,7 +190,7 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["E
 
 Wenn Sie die Datenschichtung für einen neuen Cluster einrichten, werden Sie gefragt, ob der Dienst einen S3-Bucket erstellen soll oder ob Sie einen vorhandenen S3-Bucket im AWS-Konto auswählen möchten, in dem der Agent eingerichtet ist.  Das AWS-Konto muss über Berechtigungen und einen Zugriffsschlüssel verfügen, den Sie in Cloud Tiering eingeben können.  Der ONTAP Cluster verwendet den Zugriffsschlüssel, um Daten in und aus S3 zu schichten.
 
-Standardmäßig erstellt Cloud Tiering den Bucket für Sie.  Wenn Sie Ihren eigenen Bucket verwenden möchten, können Sie einen erstellen, bevor Sie den Tiering-Aktivierungsassistenten starten, und diesen Bucket dann im Assistenten auswählen. https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Erfahren Sie, wie Sie S3-Buckets über die NetApp Konsole erstellen."^] .  Der Bucket darf ausschließlich zum Speichern inaktiver Daten aus Ihren Volumes verwendet werden – er kann nicht für andere Zwecke verwendet werden.  Der S3-Bucket muss sich in einemlink:reference-aws-support.html#supported-aws-regions["Region, die Cloud Tiering unterstützt"] .
+Standardmäßig erstellt Cloud Tiering den Bucket für Sie.  Wenn Sie Ihren eigenen Bucket verwenden möchten, können Sie einen erstellen, bevor Sie den Tiering-Aktivierungsassistenten starten, und diesen Bucket dann im Assistenten auswählen. https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Erfahren Sie, wie Sie S3-Buckets über die NetApp Console erstellen."^] .  Der Bucket darf ausschließlich zum Speichern inaktiver Daten aus Ihren Volumes verwendet werden – er kann nicht für andere Zwecke verwendet werden.  Der S3-Bucket muss sich in einemlink:reference-aws-support.html#supported-aws-regions["Region, die Cloud Tiering unterstützt"] .
 
 
 NOTE: Wenn Sie Cloud Tiering so konfigurieren möchten, dass eine kostengünstigere Speicherklasse verwendet wird, in die Ihre mehrstufigen Daten nach einer bestimmten Anzahl von Tagen verschoben werden, dürfen Sie beim Einrichten des Buckets in Ihrem AWS-Konto keine Lebenszyklusregeln auswählen.  Cloud Tiering verwaltet die Lebenszyklusübergänge.
@@ -208,17 +208,17 @@ Sie müssen zwei Berechtigungssätze konfigurieren:
 .Schritte
 . *Berechtigungen für Konsolenagenten*:
 +
-** Bestätigen Sie, dass https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies["diese S3-Berechtigungen"^] sind Teil der IAM-Rolle, die dem Agenten Berechtigungen erteilt.  Sie sollten standardmäßig enthalten sein, als Sie den Agenten zum ersten Mal bereitgestellt haben.  Wenn nicht, müssen Sie alle fehlenden Berechtigungen hinzufügen. Siehe die https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS-Dokumentation: Bearbeiten von IAM-Richtlinien"^] Anweisungen hierzu finden Sie unter.
+** Bestätigen Sie, dass https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies["diese S3-Berechtigungen"^] sind Teil der IAM-Rolle, die dem Agenten Berechtigungen erteilt.  Sie sollten standardmäßig enthalten sein, als Sie den Agenten zum ersten Mal bereitgestellt haben.  Wenn nicht, müssen Sie alle fehlenden Berechtigungen hinzufügen.  Siehe die https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS-Dokumentation: Bearbeiten von IAM-Richtlinien"^] Anweisungen hierzu finden Sie unter.
 ** Der von Cloud Tiering erstellte Standard-Bucket hat das Präfix „Fabric-Pool“.  Wenn Sie für Ihren Bucket ein anderes Präfix verwenden möchten, müssen Sie die Berechtigungen mit dem gewünschten Namen anpassen.  In den S3-Berechtigungen sehen Sie eine Zeile `"Resource": ["arn:aws:s3:::fabric-pool*"]` .  Sie müssen „Fabric-Pool“ in das Präfix ändern, das Sie verwenden möchten.  Wenn Sie beispielsweise "tiering-1" als Präfix für Ihre Buckets verwenden möchten, ändern Sie diese Zeile in `"Resource": ["arn:aws:s3:::tiering-1*"]` .
 +
-Wenn Sie für Buckets, die Sie für zusätzliche Cluster in derselben NetApp Console-Organisation verwenden, ein anderes Präfix verwenden möchten, können Sie eine weitere Zeile mit dem Präfix für andere Buckets hinzufügen. Beispiel:
+Wenn Sie für Buckets, die Sie für zusätzliche Cluster in derselben NetApp Console -Organisation verwenden, ein anderes Präfix verwenden möchten, können Sie eine weitere Zeile mit dem Präfix für andere Buckets hinzufügen. Beispiel:
 
 +
 `"Resource": ["arn:aws:s3:::tiering-1*"]`
 `"Resource": ["arn:aws:s3:::tiering-2*"]`
 
 +
-Wenn Sie Ihren eigenen Bucket erstellen und kein Standardpräfix verwenden, sollten Sie diese Zeile ändern in `"Resource": ["arn:aws:s3:::*"]` damit jeder Eimer erkannt wird.  Allerdings kann es sein, dass dadurch alle Ihre Buckets offengelegt werden, anstatt nur die, die Sie für die Speicherung inaktiver Daten aus Ihren Volumes vorgesehen haben.
+Wenn Sie Ihren eigenen Bucket erstellen und kein Standardpräfix verwenden, sollten Sie diese Zeile ändern in `"Resource": ["arn:aws:s3:::*"]` damit jeder Eimer erkannt wird.  Allerdings werden dadurch möglicherweise alle Ihre Buckets freigegeben, anstatt nur die, die Sie für die Speicherung inaktiver Daten aus Ihren Volumes vorgesehen haben.
 
 
 
@@ -308,7 +308,7 @@ Please enter Certificate: Press <Enter> when done
 Nachdem Sie Ihre AWS-Umgebung vorbereitet haben, beginnen Sie mit der Tiering-Verteilung inaktiver Daten aus Ihrem ersten Cluster.
 
 .Was du brauchst
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein verwaltetes lokales System in der Konsole"^] .
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein verwaltetes lokales System in der Konsole"^].
 * Ein AWS-Zugriffsschlüssel für einen IAM-Benutzer, der über die erforderlichen S3-Berechtigungen verfügt.
 
 
@@ -378,7 +378,7 @@ image:screenshot_tiering_initial_volumes.png["Ein Screenshot, der zeigt, wie Sie
 
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].
 
 +
 image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
@@ -389,7 +389,7 @@ image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die ko
 Sie haben die Datenschichtung von Volumes im Cluster zum S3-Objektspeicher erfolgreich eingerichtet.
 
 .Wie geht es weiter?
-link:task-licensing-cloud-tiering.html["Abonnieren Sie unbedingt den Cloud Tiering-Dienst"] .
+link:task-licensing-cloud-tiering.html["Abonnieren Sie unbedingt den Cloud Tiering-Dienst"].
 
 Sie können Informationen zu den aktiven und inaktiven Daten auf dem Cluster überprüfen. link:task-managing-tiering.html["Erfahren Sie mehr über die Verwaltung Ihrer Tiering-Einstellungen"] .
 

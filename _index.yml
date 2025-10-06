@@ -1,13 +1,11 @@
 ---
 indexpage:
-  title: NetApp Cloud Tiering-Dokumentation
-  summary: NetApp Cloud Tiering erweitert Ihr Rechenzentrum in die Cloud, indem inaktive
-    Daten automatisch von lokalen ONTAP Clustern in den Objektspeicher verschoben
-    werden.
+  title: NetApp Cloud Tiering -Dokumentation
+  summary: NetApp Cloud Tiering erweitert Ihr Rechenzentrum auf die Cloud, indem inaktive
+    Daten automatisch von lokalen ONTAP Clustern auf Objektspeicher verschoben werden.
   keywords: bluexp, ontap, cloud tiering, documentation, netapp console, console
-  lead: NetApp Cloud Tiering erweitert Ihr Rechenzentrum in die Cloud, indem inaktive
-    Daten automatisch von lokalen ONTAP Clustern in den Objektspeicher verschoben
-    werden.
+  lead: NetApp Cloud Tiering erweitert Ihr Rechenzentrum auf die Cloud, indem inaktive
+    Daten automatisch von lokalen ONTAP Clustern auf Objektspeicher verschoben werden.
   tiles:
   - title: Erste Schritte
     links:
@@ -52,13 +50,13 @@ indexpage:
       url: task-managing-object-storage.html#attaching-a-second-object-store-to-an-aggregate-for-mirroring
     - title: Tauschen Sie den primären und den gespiegelten Objektspeicher aus
       url: task-managing-object-storage.html#swapping-the-primary-and-mirror-object-store
-    - title: Entfernen eines gespiegelten Objektspeichers
+    - title: Entfernen eines Spiegelobjektspeichers
       url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
   - title: Blogs und Community
     links:
-    - title: NetApp Konsole
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: NetApp Datenservices
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: NetApp Community
       url: https://community.netapp.com/

@@ -27,7 +27,7 @@ Beginnen Sie schnell, indem Sie diese Schritte befolgen, oder scrollen Sie nach 
 Sie benötigen Folgendes:
 
 [role="quick-margin-list"]
-* Ein lokaler ONTAP -Quellcluster mit ONTAP 9.4 oder höher, den Sie der NetApp Konsole hinzugefügt haben, und eine Verbindung über einen benutzerdefinierten Port zu StorageGRID. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+* Ein lokaler ONTAP -Quellcluster, auf dem ONTAP 9.4 oder höher ausgeführt wird, den Sie zur NetApp Console hinzugefügt haben, und eine Verbindung über einen benutzerdefinierten Port zu StorageGRID. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
 * StorageGRID 10.3 oder höher mit AWS-Zugriffsschlüsseln mit S3-Berechtigungen.
 * Ein bei Ihnen vor Ort installierter Konsolenagent.
 * Netzwerk für den Agenten, der eine ausgehende HTTPS-Verbindung zum ONTAP Cluster, zu StorageGRID und zum Cloud Tiering-Dienst ermöglicht.
@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]Einrichten von Tiering
 [role="quick-margin-para"]
-Wählen Sie in der NetApp Konsole ein lokales System aus, wählen Sie *Aktivieren* für Cloud Tiering und folgen Sie den Anweisungen, um die Daten in StorageGRID zu verschieben.
+Wählen Sie in der NetApp Console ein lokales System aus, wählen Sie *Aktivieren* für Cloud Tiering und folgen Sie den Anweisungen, um die Daten in StorageGRID zu verschieben.
 
 
 
@@ -65,7 +65,7 @@ Unterstützte ONTAP -Plattformen::
 
 --
 Unterstützte ONTAP -Version:: ONTAP 9.4 oder höher
-Lizenzierung:: In Ihrer NetApp Console-Organisation ist weder eine Cloud Tiering-Lizenz noch eine FabricPool -Lizenz auf dem ONTAP Cluster erforderlich, wenn Sie Daten auf StorageGRID tieren.
+Lizenzierung:: In Ihrer NetApp Console -Organisation ist weder eine Cloud Tiering-Lizenz noch eine FabricPool -Lizenz auf dem ONTAP Cluster erforderlich, wenn Sie Daten auf StorageGRID tieren.
 Cluster-Netzwerkanforderungen::
 +
 --
@@ -94,9 +94,9 @@ NOTE: Cloud Tiering unterstützt FlexGroup -Volumes ab ONTAP 9.5.  Die Einrichtu
 
 === Entdecken Sie einen ONTAP -Cluster
 
-Sie müssen der NetApp Konsole ein lokales ONTAP -System hinzufügen, bevor Sie mit dem Tiering kalter Daten beginnen können.
+Sie müssen der NetApp Console ein lokales ONTAP -System hinzufügen, bevor Sie mit dem Tiering kalter Daten beginnen können.
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^].
 
 
 
@@ -145,7 +145,7 @@ Stellen Sie sicher, dass der Agent über die erforderlichen Netzwerkverbindungen
 .Schritte
 . Stellen Sie sicher, dass das Netzwerk, in dem der Agent installiert ist, die folgenden Verbindungen ermöglicht:
 +
-** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["siehe die Liste der Endpunkte"^] )
+** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["siehe Liste der Endpunkte"^] )
 ** Eine HTTPS-Verbindung über Port 443 zu Ihrem StorageGRID -System
 ** Eine HTTPS-Verbindung über Port 443 zu Ihrem ONTAP Cluster-Management-LIF
 
@@ -159,7 +159,7 @@ Stellen Sie sicher, dass der Agent über die erforderlichen Netzwerkverbindungen
 Nachdem Sie Ihre Umgebung vorbereitet haben, beginnen Sie mit der Tiering-Verteilung inaktiver Daten aus Ihrem ersten Cluster.
 
 .Was du brauchst
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein lokales System, das der NetApp Konsole hinzugefügt wurde"^] .
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein lokales System, das der NetApp Console hinzugefügt wurde"^].
 * Der FQDN des StorageGRID -Gateway-Knotens und der Port, der für die HTTPS-Kommunikation verwendet wird.
 * Ein AWS-Zugriffsschlüssel mit den erforderlichen S3-Berechtigungen.
 
@@ -168,7 +168,7 @@ Nachdem Sie Ihre Umgebung vorbereitet haben, beginnen Sie mit der Tiering-Vertei
 . Wählen Sie das lokale ONTAP -System aus.
 . Klicken Sie im rechten Bereich auf *Aktivieren* für Cloud Tiering.
 +
-Wenn das StorageGRID -Tiering-Ziel als System in der NetApp -Konsole vorhanden ist, können Sie den Cluster auf das StorageGRID -System ziehen, um den Setup-Assistenten zu starten.
+Wenn das StorageGRID -Tiering-Ziel als System in der NetApp Console vorhanden ist, können Sie den Cluster auf das StorageGRID -System ziehen, um den Setup-Assistenten zu starten.
 
 +
 image:screenshot_setup_tiering_onprem.png["Ein Screenshot, der die Option „Setup Tiering“ zeigt, die auf der rechten Seite des Bildschirms angezeigt wird, nachdem Sie ein lokales ONTAP System ausgewählt haben."]
@@ -210,7 +210,7 @@ image:screenshot_tiering_initial_volumes.png["Ein Screenshot, der zeigt, wie Sie
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].
 
 +
 image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]

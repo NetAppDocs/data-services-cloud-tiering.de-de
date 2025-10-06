@@ -14,7 +14,7 @@ summary: Diese FAQ können hilfreich sein, wenn Sie nur schnell eine Antwort auf
 
 
 [role="lead"]
-Diese FAQ können hilfreich sein, wenn Sie nur eine schnelle Antwort auf eine Frage zum NetApp Cloud Tiering suchen.
+Diese FAQ können hilfreich sein, wenn Sie nur eine schnelle Antwort auf eine Frage zu NetApp Cloud Tiering suchen.
 
 
 
@@ -82,7 +82,7 @@ Cloud Tiering wird auf Volume-Ebene aktiviert, indem jedem Volume eine Tiering-R
 
 === Wie bestimmt Cloud Tiering, welche Blöcke in die Cloud eingeordnet werden?
 
-Die mit dem Volume verknüpfte Tiering-Richtlinie ist der Mechanismus, der steuert, welche Blöcke wann gestaffelt werden.  Die Richtlinie definiert die Art der Datenblöcke (Snapshots, Benutzerdaten oder beides) und die Kühlperiode. Sehenlink:concept-cloud-tiering.html#volume-tiering-policies["Volume-Tiering-Richtlinien"] für Details.
+Die mit dem Volume verknüpfte Tiering-Richtlinie ist der Mechanismus, der steuert, welche Blöcke wann gestaffelt werden.  Die Richtlinie definiert den Typ der Datenblöcke (Snapshots, Benutzerdaten oder beides) und die Kühlperiode.  Sehenlink:concept-cloud-tiering.html#volume-tiering-policies["Volume-Tiering-Richtlinien"] für Details.
 
 
 
@@ -118,7 +118,7 @@ Beim Tiering von Cold Data in die öffentliche Cloud:
 * Für das jährliche (BYOL), befristete Abonnement: ab 0,033 $ pro GB/Monat.
 
 
-https://bluexp.netapp.com/pricing["Preisdetails anzeigen"] .
+https://bluexp.netapp.com/pricing["Preisdetails anzeigen"].
 
 Beim Tiering von Cold Data auf ein NetApp StorageGRID System (private Cloud) entstehen keine Kosten.
 
@@ -152,7 +152,7 @@ Ja. Für alle Lesevorgänge aus der öffentlichen Cloud fallen Ausgangsgebühren
 
 === Wie kann ich meine Cloud-Gebühren schätzen?  Gibt es einen „Was wäre wenn“-Modus für Cloud Tiering?
 
-Die beste Möglichkeit, die Kosten eines Cloud-Anbieters für das Hosting Ihrer Daten abzuschätzen, ist die Verwendung seiner Rechner: https://calculator.aws/#/["AWS"] , https://azure.microsoft.com/en-us/pricing/calculator/["Azurblau"] Und https://cloud.google.com/products/calculator["Google Cloud"] .
+Um abzuschätzen, wie viel ein Cloud-Anbieter für das Hosting Ihrer Daten berechnet, verwenden Sie am besten dessen Rechner: https://calculator.aws/#/["AWS"] , https://azure.microsoft.com/en-us/pricing/calculator/["Azurblau"] Und https://cloud.google.com/products/calculator["Google Cloud"] .
 
 
 
@@ -168,7 +168,7 @@ Ja. Überprüfen https://aws.amazon.com/s3/pricing/["Amazon S3-Preise"] , https:
 
 === Wie kann ich die Einsparungen meiner Volumes schätzen und einen Cold-Data-Bericht erhalten, bevor ich Cloud Tiering aktiviere?
 
-Um eine Schätzung zu erhalten, fügen Sie Ihren ONTAP Cluster zur NetApp Konsole hinzu und überprüfen Sie ihn über die Seite „Cloud Tiering Clusters“.  Wählen Sie *Potenzielle Tiering-Einsparungen berechnen* für den Cluster aus, um den https://bluexp.netapp.com/cloud-tiering-service-tco["TCO-Rechner für Cloud Tiering"^] um zu sehen, wie viel Geld Sie sparen können.
+Um eine Schätzung zu erhalten, fügen Sie Ihren ONTAP Cluster zur NetApp Console hinzu und überprüfen Sie ihn über die Seite „Cloud Tiering Clusters“.  Wählen Sie *Potenzielle Tiering-Einsparungen berechnen* für den Cluster aus, um den https://bluexp.netapp.com/cloud-tiering-service-tco["TCO-Rechner für Cloud Tiering"^] um zu sehen, wie viel Geld Sie sparen können.
 
 
 
@@ -210,7 +210,7 @@ Ja. Cloud Tiering kann so konfiguriert werden, dass Volumes, die auf einem belie
 
 === Was ist mit Cloud Volumes ONTAP?
 
-Wenn Sie über Cloud Volumes ONTAP -Systeme verfügen, finden Sie diese auf der Seite „Cloud Tiering Clusters“, sodass Sie einen vollständigen Überblick über die Datenschichtung in Ihrer Hybrid-Cloud-Infrastruktur erhalten.  Allerdings sind Cloud Volumes ONTAP -Systeme von Cloud Tiering schreibgeschützt.  Sie können über Cloud Tiering kein Daten-Tiering auf Cloud Volumes ONTAP einrichten. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Sie richten Tiering für Cloud Volumes ONTAP -Systeme vom ONTAP -System in der NetApp Konsole ein"^] .
+Wenn Sie über Cloud Volumes ONTAP -Systeme verfügen, finden Sie diese auf der Seite „Cloud Tiering Clusters“, sodass Sie einen vollständigen Überblick über die Datenschichtung in Ihrer Hybrid-Cloud-Infrastruktur erhalten.  Allerdings sind Cloud Volumes ONTAP -Systeme von Cloud Tiering schreibgeschützt.  Sie können über Cloud Tiering kein Daten-Tiering auf Cloud Volumes ONTAP einrichten. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Sie richten Tiering für Cloud Volumes ONTAP -Systeme vom ONTAP -System in der NetApp Console ein"^] .
 
 
 
@@ -264,7 +264,7 @@ Ja, das können Sie. Wenn Sie die Datenschichtung einrichten, haben Sie die Wahl
 
 === Welche S3-Speicherklassen werden unterstützt?
 
-Cloud Tiering unterstützt die Dateneinteilung in die Speicherklassen _Standard_, _Standard-Infrequent Access_, _One Zone-Infrequent Access_, _Intelligent Tiering_ und _Glacier Instant Retrieval_. Sehenlink:reference-aws-support.html["Unterstützte S3-Speicherklassen"] für weitere Details.
+Cloud Tiering unterstützt die Dateneinteilung in die Speicherklassen _Standard_, _Standard-Infrequent Access_, _One Zone-Infrequent Access_, _Intelligent Tiering_ und _Glacier Instant Retrieval_.  Sehenlink:reference-aws-support.html["Unterstützte S3-Speicherklassen"] für weitere Details.
 
 
 
@@ -282,13 +282,13 @@ Ja, die Konfiguration von S3-kompatiblem Objektspeicher über die Tiering-Benutz
 
 === Welche Azure Blob-Zugriffsebenen werden unterstützt?
 
-Cloud Tiering unterstützt die Dateneinteilung in die Zugriffsebenen „Hot“ oder „Cool“ für Ihre inaktiven Daten. Sehenlink:reference-azure-support.html["Unterstützte Azure Blob-Zugriffsebenen"] für weitere Details.
+Cloud Tiering unterstützt die Dateneinteilung in die Zugriffsebenen „Hot“ oder „Cool“ für Ihre inaktiven Daten.  Sehenlink:reference-azure-support.html["Unterstützte Azure Blob-Zugriffsebenen"] für weitere Details.
 
 
 
 === Welche Speicherklassen werden für Google Cloud Storage unterstützt?
 
-Cloud Tiering unterstützt die Dateneinteilung in die Speicherklassen _Standard_, _Nearline_, _Coldline_ und _Archive_. Sehenlink:reference-google-support.html["Unterstützte Google Cloud-Speicherklassen"] für weitere Details.
+Cloud Tiering unterstützt die Dateneinteilung in die Speicherklassen _Standard_, _Nearline_, _Coldline_ und _Archive_.  Sehenlink:reference-google-support.html["Unterstützte Google Cloud-Speicherklassen"] für weitere Details.
 
 
 
@@ -330,7 +330,7 @@ Ab ONTAP 9.6 werden die kalten Daten nicht zurück in die lokale Ebene verschobe
 
 
 
-=== Wie kann ich meine gestaffelten Daten vor Ort wieder auf die Leistungsstufe bringen?
+=== Wie kann ich meine mehrstufigen Daten vor Ort wieder auf die Leistungsstufe bringen?
 
 Das Zurückschreiben wird im Allgemeinen bei Lesevorgängen durchgeführt und hängt vom Tiering-Richtlinientyp ab.  Vor ONTAP 9.8 kann das Zurückschreiben des gesamten Volumes mit einem _Volume Move_-Vorgang erfolgen.  Ab ONTAP 9.8 verfügt die Tiering-Benutzeroberfläche über die Optionen „Alle Daten wiederherstellen“ oder „Aktives Dateisystem wiederherstellen“. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier["Erfahren Sie, wie Sie Daten zurück in die Leistungsebene verschieben"] .
 
@@ -344,7 +344,7 @@ Nein. Beim „Head Swap“-Verfahren ändert sich lediglich der Besitz des Aggre
 
 === Kann ich die in einem Bucket geschichteten Daten mithilfe der Konsole oder der Objektspeicher-Explorer des Cloud-Anbieters anzeigen?  Kann ich die im Objektspeicher gespeicherten Daten direkt ohne ONTAP verwenden?
 
-Nein. Die erstellten und in die Cloud verschobenen Objekte enthalten keine einzelne Datei, sondern bis zu 1.024 4-KB-Blöcke aus mehreren Dateien.  Die Metadaten eines Volumes verbleiben immer auf der lokalen Ebene.
+Nein. Die erstellten und in die Cloud verschobenen Objekte enthalten nicht eine einzelne Datei, sondern bis zu 1.024 4-KB-Blöcke aus mehreren Dateien.  Die Metadaten eines Volumes verbleiben immer auf der lokalen Ebene.
 
 
 
@@ -356,7 +356,7 @@ Die folgenden Fragen beziehen sich auf den Konsolenagenten.
 
 === Was ist der Konsolenagent?
 
-Der Konsolenagent ist eine Software, die auf einer Compute-Instanz entweder innerhalb Ihres Cloud-Kontos oder vor Ort ausgeführt wird und es der NetApp Konsole ermöglicht, Cloud-Ressourcen sicher zu verwalten.  Um den Cloud Tiering-Dienst zu verwenden, müssen Sie einen Agenten bereitstellen.
+Der Konsolenagent ist eine Software, die auf einer Compute-Instanz entweder innerhalb Ihres Cloud-Kontos oder vor Ort ausgeführt wird und es der NetApp Console ermöglicht, Cloud-Ressourcen sicher zu verwalten. Um den Cloud Tiering-Dienst zu verwenden, müssen Sie einen Agenten bereitstellen.
 
 
 
@@ -378,7 +378,7 @@ Ja. Die Agentensoftware kann heruntergeladen und manuell auf einem Linux-Host in
 
 === Ist vor der Nutzung von Cloud Tiering ein Konto bei einem Cloud-Dienstanbieter erforderlich?
 
-Ja. Sie müssen über ein Konto verfügen, bevor Sie den Objektspeicher definieren können, den Sie verwenden möchten.  Für die Einrichtung des Agenten in der Cloud auf einer VPC oder einem VNet ist außerdem ein Konto bei einem Cloud-Speicheranbieter erforderlich.
+Ja. Sie müssen über ein Konto verfügen, bevor Sie den Objektspeicher definieren können, den Sie verwenden möchten.  Beim Einrichten des Agenten in der Cloud auf einem VPC oder VNet ist außerdem ein Konto bei einem Cloud-Speicheranbieter erforderlich.
 
 
 
@@ -402,13 +402,13 @@ Es gibt vier Staffelungsrichtlinien:
 * Alle Benutzerdaten (Alle): Klassifiziert alle Daten als kalt und verschiebt das gesamte Volume sofort in den Objektspeicher.
 
 
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Tiering-Richtlinien"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Tiering-Richtlinien"].
 
 
 
 === Ab wann gelten meine Daten als kalt?
 
-Da die Datenklassifizierung auf Blockebene erfolgt, gilt ein Datenblock als kalt, wenn für einen bestimmten Zeitraum, der durch das Attribut „Minimum Cooling Days“ der Klassifizierungsrichtlinie definiert wird, nicht auf ihn zugegriffen wurde.  Der anwendbare Bereich beträgt 2–63 Tage bei ONTAP 9.7 und früher oder 2–183 Tage ab ONTAP 9.8.
+Da die Datenklassifizierung auf Blockebene erfolgt, gilt ein Datenblock als kalt, wenn für einen bestimmten Zeitraum, der durch das Attribut „Minimum Cooling Days“ der Klassifizierungsrichtlinie definiert wird, nicht auf ihn zugegriffen wurde.  Der anwendbare Bereich beträgt 2–63 Tage mit ONTAP 9.7 und früher oder 2–183 Tage ab ONTAP 9.8.
 
 
 
@@ -527,9 +527,9 @@ Ja. Auf jedem Knoten innerhalb eines HA-Paares, das Volumes mit Daten hostet, di
 
 === Welche Berechtigungen sind erforderlich?
 
-* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Für Amazon sind Berechtigungen zur Verwaltung des S3-Buckets erforderlich"] .
-* Für Azure sind keine weiteren Berechtigungen erforderlich, abgesehen von den Berechtigungen, die Sie der NetApp Konsole erteilen müssen.
-* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Für Google Cloud sind Storage-Admin-Berechtigungen für ein Dienstkonto erforderlich, das über Speicherzugriffsschlüssel verfügt"] .
-* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["Für StorageGRID sind S3-Berechtigungen erforderlich"] .
-* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["Für S3-kompatiblen Objektspeicher sind S3-Berechtigungen erforderlich"] .
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Für Amazon sind Berechtigungen zur Verwaltung des S3-Buckets erforderlich"].
+* Für Azure sind keine weiteren Berechtigungen erforderlich, abgesehen von den Berechtigungen, die Sie der NetApp Console erteilen müssen.
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Für Google Cloud sind Storage-Admin-Berechtigungen für ein Dienstkonto erforderlich, das über Speicherzugriffsschlüssel verfügt"].
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["Für StorageGRID sind S3-Berechtigungen erforderlich"].
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["Für S3-kompatiblen Objektspeicher sind S3-Berechtigungen erforderlich"].
 

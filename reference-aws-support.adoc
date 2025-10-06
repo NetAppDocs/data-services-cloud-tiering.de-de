@@ -20,7 +20,7 @@ NetApp Cloud Tiering unterstützt mehrere S3-Speicherklassen und die meisten Reg
 
 == Unterstützte S3-Speicherklassen
 
-Wenn Sie die Datenschichtung von Ihren lokalen ONTAP -Systemen zu AWS einrichten, verwendet Cloud Tiering automatisch die Speicherklasse _Standard_ für Ihre inaktiven Daten.  Cloud Tiering kann eine Lebenszyklusregel anwenden, sodass die Daten nach einer bestimmten Anzahl von Tagen von der Speicherklasse _Standard_ in eine andere Speicherklasse wechseln.  Sie können aus folgenden Speicherklassen wählen:
+Wenn Sie die Datenschichtung von Ihren lokalen ONTAP -Systemen zu AWS einrichten, verwendet Cloud Tiering automatisch die Speicherklasse _Standard_ für Ihre inaktiven Daten.  Cloud Tiering kann eine Lebenszyklusregel anwenden, sodass die Daten nach einer bestimmten Anzahl von Tagen von der _Standard_-Speicherklasse in eine andere Speicherklasse wechseln.  Sie können aus folgenden Speicherklassen wählen:
 
 * Standard – Seltener Zugriff (S3 Standard-IA)
 * Eine Zone – Seltener Zugriff (S3 One Zone – IA)
@@ -32,7 +32,7 @@ Wenn Sie keine andere Speicherklasse auswählen, verbleiben die Daten in der Spe
 
 Wenn Sie eine Cloud Tiering-Lebenszyklusregel konfigurieren, dürfen Sie beim Einrichten des Buckets in Ihrem AWS-Konto keine Lebenszyklusregeln konfigurieren.
 
-https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherklassen"^] .
+https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherklassen"^].
 
 
 

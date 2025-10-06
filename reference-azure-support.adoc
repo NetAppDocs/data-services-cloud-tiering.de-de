@@ -26,7 +26,7 @@ Wenn Sie die Zugriffsebene „Cool“ nicht auswählen, verbleiben die Daten in 
 
 Wenn Sie eine Cloud Tiering-Lebenszyklusregel konfigurieren, dürfen Sie beim Einrichten des Containers in Ihrem Azure-Konto keine Lebenszyklusregeln konfigurieren.
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Informationen zu Azure Blob-Zugriffsebenen"^] .
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Informationen zu Azure Blob-Zugriffsebenen"^].
 
 
 

@@ -4,7 +4,7 @@ permalink: task-tiering-onprem-gcp.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, google, gcp, google cloud storage 
 summary: Geben Sie Speicherplatz auf Ihren lokalen ONTAP Clustern frei, indem Sie inaktive Daten in NetApp Cloud Tiering auf Google Cloud Storage verschieben. 
 ---
-= Daten von lokalen ONTAP Clustern in Google Cloud Storage in NetApp Cloud Tiering verschieben
+= Daten von lokalen ONTAP Clustern in Google Cloud Storage in NetApp Cloud Tiering
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -27,7 +27,7 @@ Beginnen Sie schnell, indem Sie diese Schritte befolgen, oder scrollen Sie nach 
 Sie benötigen Folgendes:
 
 [role="quick-margin-list"]
-* Ein lokaler ONTAP -Quellcluster mit ONTAP 9.6 oder höher, den Sie der NetApp Konsole hinzugefügt haben, und eine Verbindung über einen benutzerdefinierten Port zu Google Cloud Storage. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+* Ein lokaler ONTAP -Quellcluster mit ONTAP 9.6 oder höher, den Sie der NetApp Console hinzugefügt haben, und eine Verbindung über einen benutzerdefinierten Port zu Google Cloud Storage. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
 * Ein Dienstkonto mit der vordefinierten Rolle „Speicheradministrator“ und Speicherzugriffsschlüsseln.
 * Ein in einer Google Cloud Platform VPC installierter Konsolenagent.
 * Netzwerk für den Agenten, der eine ausgehende HTTPS-Verbindung zum ONTAP -Cluster in Ihrem Rechenzentrum, zu Google Cloud Storage und zum Cloud Tiering-Dienst ermöglicht.
@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]Einrichten von Tiering
 [role="quick-margin-para"]
-Wählen Sie in der NetApp Konsole ein lokales System aus, wählen Sie *Aktivieren* für den Tiering-Dienst und folgen Sie den Anweisungen, um Daten in Google Cloud Storage zu verschieben.
+Wählen Sie in der NetApp Console ein lokales System aus, wählen Sie *Aktivieren* für den Tiering-Dienst und folgen Sie den Anweisungen, um die Daten in Google Cloud Storage zu verschieben.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]Einrichten der Lizenzierung
 [role="quick-margin-para"]
@@ -43,7 +43,7 @@ Nach Ablauf Ihrer kostenlosen Testversion bezahlen Sie für Cloud Tiering über 
 
 [role="quick-margin-list"]
 * Um sich über den Google Cloud Marketplace anzumelden, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["zum Marketplace-Angebot"^] , wählen Sie *Abonnieren* und folgen Sie dann den Anweisungen.
-* Um mit einer Cloud Tiering BYOL-Lizenz zu bezahlen, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[kontaktieren Sie uns, wenn Sie eine kaufen müssen], und dannlink:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Fügen Sie es der NetApp Konsole hinzu"^] .
+* Um mit einer Cloud Tiering BYOL-Lizenz zu bezahlen, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[kontaktieren Sie uns, wenn Sie eine kaufen müssen], und dannlink:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["Fügen Sie es der NetApp Console hinzu"^] .
 
 
 
@@ -73,7 +73,7 @@ Unterstützte ONTAP -Plattformen::
 
 
 --
-Unterstützte ONTAP -Versionen:: ONTAP 9.6 oder höher
+Unterstützte ONTAP-Versionen:: ONTAP 9.6 oder höher
 Cluster-Netzwerkanforderungen::
 +
 --
@@ -105,9 +105,9 @@ NOTE: Cloud Tiering unterstützt FlexGroup -Volumes.  Die Einrichtung funktionie
 
 === Entdecken Sie einen ONTAP -Cluster
 
-Sie müssen Ihr lokales ONTAP -System zur NetApp Konsole hinzufügen, bevor Sie mit dem Tiering kalter Daten beginnen können.
+Sie müssen Ihr lokales ONTAP -System zur NetApp Console hinzufügen, bevor Sie mit dem Tiering kalter Daten beginnen können.
 
-https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^].
 
 
 
@@ -128,7 +128,7 @@ Stellen Sie sicher, dass der Konsolenagent über die erforderlichen Netzwerkverb
 .Schritte
 . Stellen Sie sicher, dass die VPC, in der der Agent installiert ist, die folgenden Verbindungen ermöglicht:
 +
-** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst und zu Ihrem Google Cloud Storage(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["siehe die Liste der Endpunkte"^] )
+** Eine HTTPS-Verbindung über Port 443 zum Cloud Tiering-Dienst und zu Ihrem Google Cloud Storage(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["siehe Liste der Endpunkte"^] )
 ** Eine HTTPS-Verbindung über Port 443 zu Ihrem ONTAP Cluster-Management-LIF
 
 
@@ -150,7 +150,7 @@ Die Cloud Storage-Buckets müssen sich in einemlink:reference-google-support.htm
 NOTE: Wenn Sie Cloud Tiering so konfigurieren möchten, dass kostengünstigere Speicherklassen verwendet werden, in die Ihre mehrstufigen Daten nach einer bestimmten Anzahl von Tagen verschoben werden, dürfen Sie beim Einrichten des Buckets in Ihrem GCP-Konto keine Lebenszyklusregeln auswählen.  Cloud Tiering verwaltet die Lebenszyklusübergänge.
 
 .Schritte
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Erstellen Sie ein Dienstkonto mit der vordefinierten Rolle „Speicheradministrator“"^] .
+. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["Erstellen Sie ein Dienstkonto mit der vordefinierten Rolle „Speicheradministrator“"^].
 . Gehe zu https://console.cloud.google.com/storage/settings["GCP-Speichereinstellungen"^] und erstellen Sie Zugriffsschlüssel für das Dienstkonto:
 +
 .. Wählen Sie ein Projekt und dann *Interoperabilität* aus.  Falls Sie dies noch nicht getan haben, wählen Sie *Interoperabilitätszugriff aktivieren*.
@@ -171,7 +171,7 @@ Sie müssen die Schlüssel später eingeben, wenn Sie Cloud Tiering einrichten.
 Nachdem Sie Ihre Google Cloud-Umgebung vorbereitet haben, beginnen Sie mit der Tiering-Verteilung inaktiver Daten aus Ihrem ersten Cluster.
 
 .Was du brauchst
-* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein lokales System, das der NetApp Konsole hinzugefügt wurde"^] .
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Ein lokales System, das der NetApp Console hinzugefügt wurde"^].
 * Speicherzugriffsschlüssel für ein Dienstkonto mit der Rolle „Speicheradministrator“.
 
 
@@ -225,7 +225,7 @@ image:screenshot_tiering_initial_volumes.png["Ein Screenshot, der zeigt, wie Sie
 
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 +
-link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].
 
 +
 image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die konfigurierbaren Tiering-Richtlinieneinstellungen zeigt."]
@@ -236,7 +236,7 @@ image:screenshot_tiering_initial_policy_settings.png["Ein Screenshot, der die ko
 Sie haben die Datenschichtung von Volumes im Cluster zum Google Cloud-Objektspeicher erfolgreich eingerichtet.
 
 .Wie geht es weiter?
-link:task-licensing-cloud-tiering.html["Abonnieren Sie unbedingt den Cloud Tiering-Dienst"] .
+link:task-licensing-cloud-tiering.html["Abonnieren Sie unbedingt den Cloud Tiering-Dienst"].
 
 Sie können Informationen zu den aktiven und inaktiven Daten auf dem Cluster überprüfen. link:task-managing-tiering.html["Erfahren Sie mehr über die Verwaltung Ihrer Tiering-Einstellungen"] .
 

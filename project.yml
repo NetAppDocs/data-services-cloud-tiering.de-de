@@ -11,7 +11,7 @@ settings:
   langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: NetApp Cloud Tiering-Dokumente
+  - title: NetApp Cloud Tiering Dokumente
     url: "/index.html"
   - title: Versionshinweise
     url: "/whats-new.html"
