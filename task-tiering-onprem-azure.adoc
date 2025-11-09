@@ -14,7 +14,7 @@ summary: Geben Sie Speicherplatz auf Ihren lokalen ONTAP Clustern frei, indem Si
 
 
 [role="lead"]
-Geben Sie Speicherplatz auf Ihren lokalen ONTAP Clustern frei, indem Sie inaktive Daten in Azure Blob Storage auslagern.  Geben Sie Speicherplatz auf Ihren lokalen ONTAP Clustern frei, indem Sie inaktive Daten in Azure Blob Storage auslagern.
+Geben Sie Speicherplatz auf Ihren lokalen ONTAP Clustern frei, indem Sie inaktive Daten in Azure Blob Storage auslagern.
 
 
 
@@ -179,15 +179,12 @@ image:screenshot_setup_tiering_onprem.png["Ein Screenshot, der die Option „Akt
 
 . *Name des Objektspeichers definieren*: Geben Sie einen Namen für diesen Objektspeicher ein.  Es muss sich von allen anderen Objektspeichern unterscheiden, die Sie möglicherweise mit Aggregaten auf diesem Cluster verwenden.
 . *Anbieter auswählen*: Wählen Sie *Microsoft Azure* und dann *Weiter*.
-. *Anbieter auswählen*: Wählen Sie *Microsoft Azure* und dann *Weiter*.
 . Führen Sie die Schritte auf den Seiten *Objektspeicher erstellen* aus:
 +
-.. *Ressourcengruppe*: Wählen Sie eine Ressourcengruppe aus, in der ein vorhandener Container verwaltet wird oder in der Sie einen neuen Container für mehrstufige Daten erstellen möchten, und wählen Sie *Weiter*.
 .. *Ressourcengruppe*: Wählen Sie eine Ressourcengruppe aus, in der ein vorhandener Container verwaltet wird oder in der Sie einen neuen Container für mehrstufige Daten erstellen möchten, und wählen Sie *Weiter*.
 +
 Wenn Sie einen lokalen Agenten verwenden, müssen Sie das Azure-Abonnement eingeben, das Zugriff auf die Ressourcengruppe bietet.
 
-.. *Azure-Container*: Wählen Sie das Optionsfeld aus, um einem Speicherkonto entweder einen neuen Blob-Container hinzuzufügen oder einen vorhandenen Container zu verwenden.  Wählen Sie dann das Speicherkonto aus und wählen Sie den vorhandenen Container aus oder geben Sie den Namen für den neuen Container ein.  Wählen Sie dann *Weiter*.
 .. *Azure-Container*: Wählen Sie das Optionsfeld aus, um einem Speicherkonto entweder einen neuen Blob-Container hinzuzufügen oder einen vorhandenen Container zu verwenden.  Wählen Sie dann das Speicherkonto aus und wählen Sie den vorhandenen Container aus oder geben Sie den Namen für den neuen Container ein.  Wählen Sie dann *Weiter*.
 +
 Die in diesem Schritt angezeigten Speicherkonten und Container gehören zu der Ressourcengruppe, die Sie im vorherigen Schritt ausgewählt haben.

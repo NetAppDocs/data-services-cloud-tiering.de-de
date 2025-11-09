@@ -158,10 +158,6 @@ Um abzuschätzen, wie viel ein Cloud-Anbieter für das Hosting Ihrer Daten berec
 
 === Fallen bei den Cloud-Anbietern zusätzliche Gebühren für das Lesen/Abrufen von Daten aus dem Objektspeicher in den lokalen Speicher an?
 
-
-
-=== Fallen bei den Cloud-Anbietern zusätzliche Gebühren für das Lesen/Abrufen von Daten aus dem Objektspeicher in den lokalen Speicher an?
-
 Ja. Überprüfen https://aws.amazon.com/s3/pricing/["Amazon S3-Preise"] , https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Block Blob-Preise"] , Und https://cloud.google.com/storage/pricing["Preise für Cloud-Speicher"] für zusätzliche Kosten, die beim Lesen/Abrufen von Daten anfallen.
 
 

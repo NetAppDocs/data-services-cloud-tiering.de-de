@@ -27,7 +27,6 @@ Diese Prüfung sollte am besten durchgeführt werden, wenn die CPU-Auslastung de
 . Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
 . Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Cloud-Leistungstest* aus.
 . Überprüfen Sie die Details und wählen Sie *Weiter*.
-. Überprüfen Sie die Details und wählen Sie *Weiter*.
 . Folgen Sie den Anweisungen, um die erforderlichen Informationen bereitzustellen.
 +
 Die Informationen, die Sie angeben müssen, sind dieselben, als würden Sie Tiering auf dem Cluster einrichten.
@@ -37,7 +36,6 @@ Die Informationen, die Sie angeben müssen, sind dieselben, als würden Sie Tier
 
 .Schritte für einen Cluster, der für Tiering eingerichtet wurde
 . Wählen Sie im linken Navigationsmenü *Mobilität > Cloud-Tiering* aus.
-. Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Cloud-Leistungstest* aus.
 . Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Cloud-Leistungstest* aus.
 . Wählen Sie einen Knoten aus der Dropdownliste aus.
 . Sehen Sie sich die Ergebnisse an oder überprüfen Sie die Leistung erneut.

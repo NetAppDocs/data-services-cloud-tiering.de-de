@@ -255,7 +255,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 
 Wenn Sie eine öffentliche Standard-Internetverbindung verwenden möchten, werden alle Berechtigungen vom Agenten festgelegt, und Sie müssen nichts weiter tun. Diese Art der Verbindung wird im<<Netzpläne für Anschlussmöglichkeiten,erstes Diagramm oben>> .
 
-Wenn Sie eine sicherere Verbindung über das Internet von Ihrem lokalen Rechenzentrum zum VPC wünschen, können Sie im Tiering-Aktivierungsassistenten eine AWS PrivateLink-Verbindung auswählen.  Dies ist erforderlich, wenn Sie ein VPN oder AWS Direct Connect verwenden möchten, um Ihr lokales System über eine VPC-Endpunktschnittstelle zu verbinden, die eine private IP-Adresse verwendet.  Diese Art der Verbindung wird in der<<Netzpläne für Anschlussmöglichkeiten,zweites Diagramm oben>> .  Wenn Sie eine sicherere Verbindung über das Internet von Ihrem lokalen Rechenzentrum zum VPC wünschen, können Sie im Tiering-Aktivierungsassistenten eine AWS PrivateLink-Verbindung auswählen.  Dies ist erforderlich, wenn Sie ein VPN oder AWS Direct Connect verwenden möchten, um Ihr lokales System über eine VPC-Endpunktschnittstelle zu verbinden, die eine private IP-Adresse verwendet.  Diese Art der Verbindung wird in der<<Netzpläne für Anschlussmöglichkeiten,zweites Diagramm oben>> .
+Wenn Sie eine sicherere Verbindung über das Internet von Ihrem lokalen Rechenzentrum zum VPC wünschen, können Sie im Tiering-Aktivierungsassistenten eine AWS PrivateLink-Verbindung auswählen. Dies ist erforderlich, wenn Sie ein VPN oder AWS Direct Connect verwenden möchten, um Ihr lokales System über eine VPC-Endpunktschnittstelle zu verbinden, die eine private IP-Adresse verwendet. Diese Art der Verbindung wird in der<<Netzpläne für Anschlussmöglichkeiten,zweites Diagramm oben>> .
 
 . Erstellen Sie mithilfe der Amazon VPC-Konsole oder der Befehlszeile eine Schnittstellenendpunktkonfiguration. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Details zur Verwendung von AWS PrivateLink für Amazon S3 anzeigen"^] .
 . Ändern Sie die Sicherheitsgruppenkonfiguration, die dem Agenten zugeordnet ist.  Sie müssen die Richtlinie von "Vollzugriff" auf "Benutzerdefiniert" ändern und<<S3-Berechtigungen einrichten,Fügen Sie die erforderlichen S3-Agent-Berechtigungen hinzu>> wie bereits gezeigt.
@@ -323,13 +323,11 @@ image:screenshot_setup_tiering_onprem.png["Ein Screenshot, der die Option „Akt
 
 . *Name des Objektspeichers definieren*: Geben Sie einen Namen für diesen Objektspeicher ein.  Es muss sich von allen anderen Objektspeichern unterscheiden, die Sie möglicherweise mit Aggregaten auf diesem Cluster verwenden.
 . *Anbieter auswählen*: Wählen Sie *Amazon Web Services* und dann *Weiter*.
-. *Anbieter auswählen*: Wählen Sie *Amazon Web Services* und dann *Weiter*.
 +
 image:screenshot_tiering_aws_s3_bucket.png["Ein Screenshot, der die Daten zeigt, die zum Einrichten der Tiering-Funktion für einen S3-Bucket bereitgestellt werden müssen."]
 
 . Füllen Sie die Abschnitte auf der Seite *Tiering-Setup* aus:
 +
-.. *S3-Bucket*: Fügen Sie einen neuen S3-Bucket hinzu oder wählen Sie einen vorhandenen S3-Bucket aus, wählen Sie die Bucket-Region aus und wählen Sie *Weiter*.
 .. *S3-Bucket*: Fügen Sie einen neuen S3-Bucket hinzu oder wählen Sie einen vorhandenen S3-Bucket aus, wählen Sie die Bucket-Region aus und wählen Sie *Weiter*.
 +
 Wenn Sie einen lokalen Agenten verwenden, müssen Sie die AWS-Konto-ID eingeben, die Zugriff auf den vorhandenen S3-Bucket oder den neu zu erstellenden S3-Bucket bietet.

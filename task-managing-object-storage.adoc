@@ -24,7 +24,6 @@ Sie können alle Objektspeicher anzeigen, die für jeden Cluster konfiguriert wu
 
 .Schritte
 . Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Object Store Info* aus.
-. Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Object Store Info* aus.
 . Überprüfen Sie die Details zu den Objektspeichern.
 +
 Dieses Beispiel zeigt sowohl einen Amazon S3- als auch einen Azure Blob-Objektspeicher, die an verschiedene Aggregate in einem Cluster angeschlossen sind.
@@ -42,8 +41,6 @@ Sie können einen neuen Objektspeicher für Aggregate in Ihrem Cluster hinzufüg
 
 .Schritte
 . Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Object Store Info* aus.
-. Wählen Sie auf der Seite *Cluster* das Menüsymbol für einen Cluster und dann *Object Store Info* aus.
-. Wählen Sie auf der Seite „Objektspeicherinformationen“ die Option „Neuen Objektspeicher erstellen“ aus.
 . Wählen Sie auf der Seite „Objektspeicherinformationen“ die Option „Neuen Objektspeicher erstellen“ aus.
 +
 image:screenshot_tiering_object_store_create_button.png["Ein Screenshot, der die Schaltfläche „Neuen Objektspeicher erstellen“ zum Erstellen eines neuen Objektspeichers zeigt."]

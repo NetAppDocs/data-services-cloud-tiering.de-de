@@ -178,13 +178,10 @@ image:screenshot_setup_tiering_onprem.png["Ein Screenshot, der die Tiering-Optio
 
 . *Name des Objektspeichers definieren*: Geben Sie einen Namen für diesen Objektspeicher ein.  Es muss sich von allen anderen Objektspeichern unterscheiden, die Sie möglicherweise mit Aggregaten auf diesem Cluster verwenden.
 . *Anbieter auswählen*: Wählen Sie *S3-kompatibel* und dann *Weiter*.
-. *Anbieter auswählen*: Wählen Sie *S3-kompatibel* und dann *Weiter*.
 . Führen Sie die Schritte auf den Seiten *Objektspeicher erstellen* aus:
 +
 .. *Server*: Geben Sie den FQDN des S3-kompatiblen Objektspeicherservers, den Port, den ONTAP für die HTTPS-Kommunikation mit dem Server verwenden soll, sowie den Zugriffsschlüssel und den geheimen Schlüssel für ein Konto ein, das über die erforderlichen S3-Berechtigungen verfügt.
 .. *Bucket*: Fügen Sie einen neuen Bucket hinzu oder wählen Sie einen vorhandenen Bucket aus und wählen Sie *Weiter*.
-.. *Bucket*: Fügen Sie einen neuen Bucket hinzu oder wählen Sie einen vorhandenen Bucket aus und wählen Sie *Weiter*.
-.. *Cluster-Netzwerk*: Wählen Sie den IP-Bereich aus, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll, und wählen Sie *Weiter*.
 .. *Cluster-Netzwerk*: Wählen Sie den IP-Bereich aus, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll, und wählen Sie *Weiter*.
 +
 Durch die Auswahl des richtigen IPspace wird sichergestellt, dass Cloud Tiering eine Verbindung von ONTAP zu Ihrem S3-kompatiblen Objektspeicher herstellen kann.

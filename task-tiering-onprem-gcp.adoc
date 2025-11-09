@@ -154,8 +154,6 @@ NOTE: Wenn Sie Cloud Tiering so konfigurieren möchten, dass kostengünstigere S
 . Gehe zu https://console.cloud.google.com/storage/settings["GCP-Speichereinstellungen"^] und erstellen Sie Zugriffsschlüssel für das Dienstkonto:
 +
 .. Wählen Sie ein Projekt und dann *Interoperabilität* aus.  Falls Sie dies noch nicht getan haben, wählen Sie *Interoperabilitätszugriff aktivieren*.
-.. Wählen Sie ein Projekt und dann *Interoperabilität* aus.  Falls Sie dies noch nicht getan haben, wählen Sie *Interoperabilitätszugriff aktivieren*.
-.. Wählen Sie unter *Zugriffsschlüssel für Dienstkonten* die Option *Schlüssel für ein Dienstkonto erstellen* aus, wählen Sie das gerade erstellte Dienstkonto aus und wählen Sie *Schlüssel erstellen*.
 .. Wählen Sie unter *Zugriffsschlüssel für Dienstkonten* die Option *Schlüssel für ein Dienstkonto erstellen* aus, wählen Sie das gerade erstellte Dienstkonto aus und wählen Sie *Schlüssel erstellen*.
 +
 Sie müssen die Schlüssel später eingeben, wenn Sie Cloud Tiering einrichten.

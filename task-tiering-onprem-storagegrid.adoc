@@ -175,16 +175,13 @@ image:screenshot_setup_tiering_onprem.png["Ein Screenshot, der die Option „Set
 
 . *Name des Objektspeichers definieren*: Geben Sie einen Namen für diesen Objektspeicher ein.  Es muss sich von allen anderen Objektspeichern unterscheiden, die Sie möglicherweise mit Aggregaten auf diesem Cluster verwenden.
 . *Anbieter auswählen*: Wählen Sie * StorageGRID* und dann *Weiter*.
-. *Anbieter auswählen*: Wählen Sie * StorageGRID* und dann *Weiter*.
 . Führen Sie die Schritte auf den Seiten *Objektspeicher erstellen* aus:
 +
 .. *Server*: Geben Sie den FQDN des StorageGRID -Gateway-Knotens, den Port, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, sowie den Zugriffsschlüssel und den geheimen Schlüssel für ein Konto ein, das über die erforderlichen S3-Berechtigungen verfügt.
 .. *Bucket*: Fügen Sie einen neuen Bucket hinzu oder wählen Sie einen vorhandenen Bucket aus, der mit dem Präfix _fabric-pool_ beginnt, und wählen Sie *Weiter*.
-.. *Bucket*: Fügen Sie einen neuen Bucket hinzu oder wählen Sie einen vorhandenen Bucket aus, der mit dem Präfix _fabric-pool_ beginnt, und wählen Sie *Weiter*.
 +
 Das Präfix _fabric-pool_ ist erforderlich, da die IAM-Richtlinie für den Agenten es der Instanz ermöglicht, S3-Aktionen für Buckets auszuführen, die genau mit diesem Präfix benannt sind.  Sie könnten den S3-Bucket beispielsweise _fabric-pool-AFF1_ nennen, wobei AFF1 der Name des Clusters ist.
 
-.. *Cluster-Netzwerk*: Wählen Sie den IP-Bereich aus, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll, und wählen Sie *Weiter*.
 .. *Cluster-Netzwerk*: Wählen Sie den IP-Bereich aus, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll, und wählen Sie *Weiter*.
 +
 Durch die Auswahl des richtigen IP-Bereichs wird sichergestellt, dass Cloud Tiering eine Verbindung von ONTAP zum StorageGRID Objektspeicher herstellen kann.
@@ -199,15 +196,11 @@ Sie können auch die zum Hochladen inaktiver Daten in den Objektspeicher verfüg
 ** Um alle Bände auszuwählen, aktivieren Sie das Kontrollkästchen in der Titelzeile (image:button_backup_all_volumes.png[""] ) und wählen Sie *Volumes konfigurieren*.
 ** Um mehrere Volumes auszuwählen, aktivieren Sie das Kontrollkästchen für jedes Volume (image:button_backup_1_volume.png[""] ) und wählen Sie *Volumes konfigurieren*.
 ** Um ein einzelnes Volume auszuwählen, wählen Sie die Zeile (oderimage:screenshot_edit_icon.gif["Bleistiftsymbol bearbeiten"] Symbol) für die Lautstärke.
-** Um alle Bände auszuwählen, aktivieren Sie das Kontrollkästchen in der Titelzeile (image:button_backup_all_volumes.png[""] ) und wählen Sie *Volumes konfigurieren*.
-** Um mehrere Volumes auszuwählen, aktivieren Sie das Kontrollkästchen für jedes Volume (image:button_backup_1_volume.png[""] ) und wählen Sie *Volumes konfigurieren*.
-** Um ein einzelnes Volume auszuwählen, wählen Sie die Zeile (oderimage:screenshot_edit_icon.gif["Bleistiftsymbol bearbeiten"] Symbol) für die Lautstärke.
 +
 image:screenshot_tiering_initial_volumes.png["Ein Screenshot, der zeigt, wie Sie ein einzelnes Volume, mehrere Volumes oder alle Volumes auswählen und die Schaltfläche „Ausgewählte Volumes ändern“ verwenden."]
 
 
 
-. Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 . Wählen Sie im Dialogfeld „Tiering-Richtlinie“ eine Tiering-Richtlinie aus, passen Sie optional die Kühltage für die ausgewählten Volumes an und wählen Sie „Übernehmen“ aus.
 +
 link:concept-cloud-tiering.html#volume-tiering-policies["Erfahren Sie mehr über Volumenstaffelungsrichtlinien und Kühltage"].

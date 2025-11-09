@@ -51,7 +51,6 @@ Abonnieren Sie Cloud Tiering vom AWS Marketplace, um ein Pay-as-you-go-Abonnemen
 .Schritte
 . Wählen Sie in der NetApp Console*Mobilität > Cloud-Tiering > On-Premises-Dashboard*.
 . Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Amazon Web Services“ die Option „Abonnieren“ und dann „Weiter“ aus.
-. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Amazon Web Services“ die Option „Abonnieren“ und dann „Weiter“ aus.
 . Abonnieren Sie von der https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWS Marketplace"^] und melden Sie sich dann erneut bei der NetApp Console an, um die Registrierung abzuschließen.
 +
 Das folgende Video zeigt den Vorgang:
@@ -71,7 +70,6 @@ Abonnieren Sie Cloud Tiering vom Azure Marketplace, um ein Pay-as-you-go-Abonnem
 .Schritte
 . Wählen Sie in der NetApp Console*Mobilität > Cloud-Tiering > On-Premises-Dashboard*.
 . Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Microsoft Azure“ die Option „Abonnieren“ und dann „Weiter“ aus.
-. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Microsoft Azure“ die Option „Abonnieren“ und dann „Weiter“ aus.
 . Abonnieren Sie von der https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure Marketplace"^] und melden Sie sich dann erneut bei der NetApp Console an, um die Registrierung abzuschließen.
 +
 Das folgende Video zeigt den Vorgang:
@@ -90,7 +88,6 @@ Abonnieren Sie Cloud Tiering vom Google Cloud Marketplace, um ein Pay-as-you-go-
 [[subscribe-gcp]]
 .Schritte
 . Wählen Sie in der NetApp Console*Mobilität > Cloud-Tiering > On-Premises-Dashboard*.
-. Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Google Cloud“ die Option „Abonnieren“ und dann „Weiter“ aus.
 . Wählen Sie im Abschnitt „Marketplace-Abonnements“ unter „Google Cloud“ die Option „Abonnieren“ und dann „Weiter“ aus.
 . Abonnieren Sie von der https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google Cloud Marketplace"^] und melden Sie sich dann erneut bei der NetApp Console an, um die Registrierung abzuschließen.
 +
