@@ -114,6 +114,7 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["E
 
 S3-kompatibler Objektspeicher muss die folgenden Anforderungen erfüllen.
 
+[[preparing-s3-compatible-object-storage]]
 S3-Anmeldeinformationen:: Wenn Sie das Tiering für S3-kompatiblen Objektspeicher einrichten, werden Sie aufgefordert, einen S3-Bucket zu erstellen oder einen vorhandenen S3-Bucket auszuwählen.  Sie müssen Cloud Tiering einen S3-Zugriffsschlüssel und einen geheimen Schlüssel bereitstellen.  Cloud Tiering verwendet die Schlüssel, um auf Ihren Bucket zuzugreifen.
 +
 --

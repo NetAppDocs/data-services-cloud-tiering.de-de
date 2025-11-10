@@ -183,7 +183,7 @@ ONTAP Cluster in den folgenden Konfigurationen können Cloud Tiering-Lizenzen ve
 
 === Prozess für vorhandene Cluster mit einer FabricPool -Lizenz
 
-Wenn Sielink:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Entdecken Sie einen dieser speziellen Clustertypen in Cloud Tiering"] , Cloud Tiering erkennt die FabricPool Lizenz und fügt die Lizenz der Konsole hinzu.  Diese Cluster werden die Daten wie gewohnt weiter einstufen.  Wenn die FabricPool -Lizenz abläuft, müssen Sie eine Cloud Tiering-Lizenz erwerben.
+Wenn Sielink:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["Entdecken Sie einen dieser speziellen Clustertypen in Cloud Tiering"] , Cloud Tiering erkennt die FabricPool Lizenz und fügt die Lizenz der Konsole hinzu. Diese Cluster werden die Daten wie gewohnt weiter einstufen. Wenn die FabricPool -Lizenz abläuft, müssen Sie eine Cloud Tiering-Lizenz erwerben.
 
 
 
@@ -207,9 +207,9 @@ Beachten Sie, dass Sie eine Lizenz mit ausreichender Kapazität für die Datenve
 +
 Konfigurieren Sie an dieser Stelle kein Tiering.
 
-. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Erwerben Sie eine Cloud Tiering-Lizenz"]für die für den bzw. die neuen Cluster benötigte Kapazität.
+. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license["Erwerben Sie eine Cloud Tiering-Lizenz"]für die für den bzw. die neuen Cluster benötigte Kapazität.
 . In der Konsole<<licenses,Fügen Sie die Lizenz zur digitalen Geldbörse hinzu>> [Lizenz hinzufügen].
-. Beim Cloud Tieringlink:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Entdecken Sie die neuen Cluster"] .
+. Beim Cloud Tieringlink:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["Entdecken Sie die neuen Cluster"] .
 . Wählen Sie auf der Seite „Cluster“image:screenshot_horizontal_more_button.gif["Symbol „Mehr“"] für den Cluster und wählen Sie *Lizenz bereitstellen*.
 +
 image:screenshot_tiering_deploy_license.png["Ein Screenshot, der zeigt, wie eine Tiering-Lizenz in einem ONTAP Cluster bereitgestellt wird."]

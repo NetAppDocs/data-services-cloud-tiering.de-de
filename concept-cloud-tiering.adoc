@@ -22,7 +22,7 @@ Ursprünglich wurde dies auf AFF, FAS und ONTAP Select Systemen mit reinen SSD-A
 
 Sie können Tiering für Einzelknotencluster, HA-konfigurierte Cluster, Cluster in Tiering Mirror-Konfigurationen und MetroCluster Konfigurationen mit FabricPool Mirror konfigurieren.  Cloud-Tiering-Lizenzen werden von allen Ihren Clustern gemeinsam genutzt.
 
-https://bluexp.netapp.com/cloud-tiering-service-tco["Verwenden Sie den TCO-Rechner für Cloud Tiering, um zu sehen, wie viel Geld Sie sparen können"^].
+https://www.netapp.com/data-services/tiering/tco-calculator/["Verwenden Sie den TCO-Rechner für Cloud Tiering, um zu sehen, wie viel Geld Sie sparen können"^].
 
 
 
@@ -70,7 +70,7 @@ Sie können inaktive Daten von einem lokalen ONTAP -System auf die folgenden Obj
 * S3-kompatibler Objektspeicher (z. B. MinIO)
 
 
-Cloud-Tiering-Lizenzen können auch mit Ihren Clustern geteilt werden, die Daten in IBM Cloud Object Storage einstufen.  Die FabricPool -Konfiguration muss mit System Manager oder der ONTAP CLI eingerichtet werden, aberlink:task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations["Die Lizenzierung für diese Art von Konfiguration erfolgt mithilfe von Cloud Tiering."]
+Cloud-Tiering-Lizenzen können auch mit Ihren Clustern geteilt werden, die Daten in IBM Cloud Object Storage einstufen. Die FabricPool -Konfiguration muss mit System Manager oder der ONTAP CLI eingerichtet werden, aberlink:task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations["Die Lizenzierung für diese Art von Konfiguration erfolgt mithilfe von Cloud Tiering."]
 
 
 NOTE: Sie können Daten von NAS-Volumes in die öffentliche Cloud oder in private Clouds wie StorageGRID verschieben.  Wenn Sie Daten stufen, auf die über SAN-Protokolle zugegriffen wird, empfiehlt NetApp aus Konnektivitätsgründen die Verwendung privater Clouds.
@@ -131,7 +131,7 @@ Wenn Sie beispielsweise über eine 10-TB-Lizenz verfügen, wird die gesamte Kapa
 
 Während Ihrer kostenlosen Testphase oder wenn Sie Ihre Cloud Tiering BYOL-Lizenz nicht überschritten haben, werden Ihnen keine Kosten für Ihr Pay-as-you-go-Abonnement in Rechnung gestellt.
 
-link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-paygo-subscription["Erfahren Sie, wie Sie ein Pay-as-you-go-Abonnement einrichten"].
+link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-paygo-subscription["Erfahren Sie, wie Sie ein Pay-as-you-go-Abonnement einrichten"].
 
 
 
@@ -147,12 +147,12 @@ Jahresverträge werden derzeit beim Tiering auf Google Cloud nicht unterstützt.
 
 Bringen Sie Ihre eigene Lizenz mit, indem Sie eine *Cloud Tiering*-Lizenz von NetApp erwerben (früher als „Cloud Tiering“-Lizenz bekannt).  Sie können Lizenzen mit einer Laufzeit von 1, 2 oder 3 Jahren erwerben und eine beliebige abgestufte Kapazität angeben (beginnend bei mindestens 10 TiB).  Bei der BYOL Cloud Tiering-Lizenz handelt es sich um eine Floating-Lizenz, die Sie für mehrere lokale ONTAP Cluster verwenden können.  Die gesamte Tiering-Kapazität, die Sie in Ihrer Cloud Tiering-Lizenz definieren, kann von allen Ihren lokalen Clustern verwendet werden.
 
-Nachdem Sie eine Cloud Tiering-Lizenz erworben haben, müssen Sie die Lizenz zur NetApp Console hinzufügen. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Erfahren Sie, wie Sie eine Cloud Tiering BYOL-Lizenz verwenden"] .
+Nachdem Sie eine Cloud Tiering-Lizenz erworben haben, müssen Sie die Lizenz zur NetApp Console hinzufügen. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license["Erfahren Sie, wie Sie eine Cloud Tiering BYOL-Lizenz verwenden"].
 
 Wie oben erwähnt, empfehlen wir Ihnen, ein Pay-as-you-go-Abonnement einzurichten, auch wenn Sie eine BYOL-Lizenz erworben haben.
 
 
-NOTE: Ab August 2021 wurde die alte * FabricPool*-Lizenz durch die *Cloud Tiering*-Lizenz ersetzt. link:task-licensing-cloud-tiering.html#bluexp-tiering-byol-licensing-starting-in-2021["Lesen Sie mehr darüber, wie sich die Cloud Tiering-Lizenz von der FabricPool -Lizenz unterscheidet"] .
+NOTE: Ab August 2021 wurde die alte * FabricPool*-Lizenz durch die *Cloud Tiering*-Lizenz ersetzt. link:task-licensing-cloud-tiering.html#cloud-tiering-byol-licensing-starting-in-2021["Lesen Sie mehr darüber, wie sich die Cloud Tiering-Lizenz von der FabricPool -Lizenz unterscheidet"].
 
 
 

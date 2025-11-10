@@ -66,7 +66,7 @@ Wenn Sie Cloud Tiering aktivieren, kann ONTAP eine unbegrenzte Netzwerkbandbreit
 
 Das Tiering-Ereignis „Tieren Sie zusätzliche Daten vom Cluster <Name> in den Objektspeicher, um Ihre Speichereffizienz zu erhöhen“ wird jetzt als Benachrichtigung angezeigt, wenn ein Cluster weniger als 20 % seiner kalten Daten tieret – einschließlich Clustern, die keine Daten tieren.
 
-Diese Benachrichtigung ist eine „Empfehlung“, die Ihnen dabei helfen soll, Ihre Systeme effizienter zu gestalten und Speicherkosten zu sparen. Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
+Diese Benachrichtigung ist eine „Empfehlung“, die Ihnen dabei helfen soll, Ihre Systeme effizienter zu gestalten und Speicherkosten zu sparen. Es bietet einen Link zum https://www.netapp.com/data-services/tiering/tco-calculator/["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
 
 
 

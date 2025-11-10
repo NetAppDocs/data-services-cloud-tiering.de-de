@@ -123,7 +123,7 @@ Zum Verteilen der Daten in die Cloud ist ein Agent erforderlich.  Beim Tiering v
 
 === Stellen Sie sicher, dass Sie über die erforderlichen Agentenberechtigungen verfügen
 
-Wenn Sie den Konsolenagenten mit Version 3.9.25 oder höher erstellt haben, sind Sie fertig.  Die benutzerdefinierte Rolle, die die Berechtigungen bereitstellt, die ein Agent zum Verwalten von Ressourcen und Prozessen in Ihrem Azure-Netzwerk benötigt, wird standardmäßig eingerichtet.  Siehe die https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#custom-role-permissions["erforderliche benutzerdefinierte Rollenberechtigungen"^] und die https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#cloud-tiering["Für Cloud Tiering sind bestimmte Berechtigungen erforderlich"^] .
+Wenn Sie den Konsolenagenten mit Version 3.9.25 oder höher erstellt haben, sind Sie fertig. Die benutzerdefinierte Rolle, die die Berechtigungen bereitstellt, die ein Agent zum Verwalten von Ressourcen und Prozessen in Ihrem Azure-Netzwerk benötigt, wird standardmäßig eingerichtet. Siehe die https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["erforderliche benutzerdefinierte Rollenberechtigungen"^] und die https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html#tiering["Für Cloud Tiering sind bestimmte Berechtigungen erforderlich"^] .
 
 Wenn Sie den Agenten mit einer früheren Version erstellt haben, müssen Sie die Berechtigungsliste für das Azure-Konto bearbeiten, um fehlende Berechtigungen hinzuzufügen.
 

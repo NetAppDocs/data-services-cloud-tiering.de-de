@@ -22,7 +22,7 @@ Derzeit gibt es ein Tiering-Ereignis, das als Benachrichtigung angezeigt wird:
 
 Um Speicherplatz zu sparen, werden zusätzliche Daten vom Cluster <Name> in den Objektspeicher verschoben.
 
-Diese Benachrichtigung ist eine „Empfehlung“ zur Verbesserung der Systemleistung und zur Reduzierung der Speicherkosten.  Es zeigt an, dass ein Cluster weniger als 20 % seiner kalten Daten in Tiering-Phasen einordnet – einschließlich Clustern, die keine Daten in Tiering-Phasen einordnen.  Es bietet einen Link zum https://bluexp.netapp.com/cloud-tiering-service-tco["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
+Diese Benachrichtigung ist eine „Empfehlung“ zur Verbesserung der Systemleistung und zur Reduzierung der Speicherkosten. Es zeigt an, dass ein Cluster weniger als 20 % seiner kalten Daten in Tiering-Phasen einordnet – einschließlich Clustern, die keine Daten in Tiering-Phasen einordnen. Es bietet einen Link zum https://www.netapp.com/data-services/tiering/tco-calculator/["Rechner für die Gesamtbetriebskosten und Einsparungen bei Cloud Tiering"^] um Ihnen bei der Berechnung Ihrer Kosteneinsparungen zu helfen.
 
 Die NetApp Console sendet für diese Benachrichtigung keine E-Mail.
 

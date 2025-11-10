@@ -164,7 +164,7 @@ Ja. Überprüfen https://aws.amazon.com/s3/pricing/["Amazon S3-Preise"] , https:
 
 === Wie kann ich die Einsparungen meiner Volumes schätzen und einen Cold-Data-Bericht erhalten, bevor ich Cloud Tiering aktiviere?
 
-Um eine Schätzung zu erhalten, fügen Sie Ihren ONTAP Cluster zur NetApp Console hinzu und überprüfen Sie ihn über die Seite „Cloud Tiering Clusters“.  Wählen Sie *Potenzielle Tiering-Einsparungen berechnen* für den Cluster aus, um den https://bluexp.netapp.com/cloud-tiering-service-tco["TCO-Rechner für Cloud Tiering"^] um zu sehen, wie viel Geld Sie sparen können.
+Um eine Schätzung zu erhalten, fügen Sie Ihren ONTAP Cluster zur NetApp Console hinzu und überprüfen Sie ihn über die Seite „Cloud Tiering Clusters“. Wählen Sie *Potenzielle Tiering-Einsparungen berechnen* für den Cluster aus, um den https://www.netapp.com/data-services/tiering/tco-calculator["TCO-Rechner für Cloud Tiering"^] um zu sehen, wie viel Geld Sie sparen können.
 
 
 
@@ -214,7 +214,7 @@ Wenn Sie über Cloud Volumes ONTAP -Systeme verfügen, finden Sie diese auf der 
 
 Es hängt davon ab, wo Sie die kalten Daten einstufen.  Weitere Einzelheiten finden Sie unter den folgenden Links:
 
-* link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster["Tiering von Daten zu Amazon S3"]
+* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters["Tiering von Daten zu Amazon S3"]
 * link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Tiering von Daten in Azure Blob Storage"]
 * link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters["Tiering von Daten in Google Cloud Storage"]
 * link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters["Tiering von Daten zu StorageGRID"]
